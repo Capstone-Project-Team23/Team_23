@@ -1,0 +1,29 @@
+/* Contact Form */
+
+p {
+    margin: 0;
+}
+
+.rectangle-13 {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 16px 40px rgba(112, 144, 176, 0.2);
+    width: 423px;
+    height: 558px;
+    border-radius: 48px;
+}
+
+
+/* ContactUsFormInputFields */
+
+.txt-598 {
+    font-size: 36px;
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    color: rgba(47, 46, 65, 1);
+    width: 284px;
+    word-wrap: break-word;
+}
+
+.txt-5982 {
+    color: rgba(4, 215, 162, 1);
+}

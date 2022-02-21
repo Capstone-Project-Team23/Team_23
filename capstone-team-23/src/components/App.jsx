@@ -1,8 +1,9 @@
 import react from "react";
+import ContactUsPage from "./ContactUs/ContactUsPage/ContactUs";
 
 function App() {
     return <div>
-        <h1>Hello world</h1>
+        <ContactUsPage></ContactUsPage>
     </div>
 }
 
