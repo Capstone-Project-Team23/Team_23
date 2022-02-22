@@ -3,7 +3,7 @@ import './css/button.css'
 function Button(props) {
   return (<>
   
-    <button  className='login' style={{
+    <button  className='login btn' style={{
         width:props.width,
         height:props.height
     }}>

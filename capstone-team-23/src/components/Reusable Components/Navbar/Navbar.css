@@ -1,0 +1,16 @@
+body {
+  padding: 20px;
+}
+
+.companyLogo {
+  padding: 10px;
+}
+
+.flex-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar {
+  padding: 10px;
+}/*# sourceMappingURL=Navbar.css.map */
