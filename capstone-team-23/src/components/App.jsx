@@ -4,7 +4,8 @@ import ContactUsPage from "./ContactUs/ContactUsPage/ContactUs";
 function App() {
     return <div>
         <ContactUsPage></ContactUsPage>
-    </div>
+      </div>
+  
 }
 
-export default App;
+export default App
