@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .inputField {
   background-color: rgba(196, 196, 196, 0.15);
+  font-family: Poppins, sans-serif;
   border-radius: 94px;
   border: none;
   padding-left: 15px;
