@@ -3,14 +3,14 @@ import React from 'react'
 // import Label from './Reusable Components/Label/Label'
 // import CompanyLogo from './Reusable Components/CompanyLogo/CompanyLogo'
 // import Button from './Reusable Components/Buttons/Button'
-import HomePage from './Home Page/WholePage/HomePage'
+import Slogan from '../Slogan/Slogan'
 
-function App() {
+function HomePage() {
   return (
     <div>
-      <HomePage/>
+        <Slogan/>
     </div>
   )
 }
 
-export default App
+export default HomePage
