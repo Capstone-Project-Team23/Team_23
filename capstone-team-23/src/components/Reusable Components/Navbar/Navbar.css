@@ -6,11 +6,11 @@ body {
   padding: 10px;
 }
 
+.navbar-custom {
+  padding: 20px;
+}
+
 .flex-nav {
   display: flex;
   justify-content: flex-end;
-}
-
-.navbar {
-  padding: 10px;
 }/*# sourceMappingURL=Navbar.css.map */
