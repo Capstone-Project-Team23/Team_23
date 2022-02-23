@@ -3,7 +3,7 @@ import './css/Label.css';
 function Label(props) {
   return (
     <div>
-        <p className='name'>{props.name}</p>
+        <p className='name' style={props.style}>{props.name}</p>
         </div>
   )
 }

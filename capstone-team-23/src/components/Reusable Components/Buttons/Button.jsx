@@ -1,15 +1,18 @@
 import React from 'react'
 import './css/button.css'
 function Button(props) {
-  return (<>
+  return (<div style={{
+      textAlign:"Center"
+  }}>
   
-    <button  className='login' style={{
+    <button  className='login btn' style={{
         width:props.width,
-        height:props.height
+        height:props.height,
+
     }}>
         <span className="button-text" >{props.buttonText}</span>
     </button>
-    </>)
+    </div>)
 }
 
 export default Button
