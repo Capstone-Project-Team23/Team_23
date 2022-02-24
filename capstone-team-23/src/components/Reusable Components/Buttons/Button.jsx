@@ -8,6 +8,7 @@ function Button(props) {
     <button  className='login btn' style={{
         width:props.width,
         height:props.height,
+        paddingBottom: "10px" //edited
 
     }}>
         <span className="button-text" >{props.buttonText}</span>
