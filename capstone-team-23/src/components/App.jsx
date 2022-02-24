@@ -1,5 +1,5 @@
 import react from "react";
-import ContactUsPage from "./ContactUs/ContactUsPage/ContactUs";
+import ContactUsPage from "./ContactUs/ContactUsWholePage/ContactUs";
 
 function App() {
     return <div>
