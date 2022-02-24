@@ -1,9 +1,11 @@
-import react from "react";
-import ContactUsPage from "./ContactUs/ContactUsWholePage/ContactUs";
+
+import React from 'react'
+
+
 
 function App() {
     return <div>
-        <ContactUsPage></ContactUsPage>
+        
       </div>
   
 }

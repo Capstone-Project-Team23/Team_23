@@ -1,6 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .inputField {
   background-color: rgba(196, 196, 196, 0.15);
+  font-family: Poppins, sans-serif;
   border-radius: 94px;
   border: none;
-  padding-left: 15px;
+  padding: 7px;
+  font-size: 0.9em;
 }/*# sourceMappingURL=InputField.css.map */
