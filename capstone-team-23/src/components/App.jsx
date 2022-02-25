@@ -1,9 +1,8 @@
 import react from "react";
+import AboutUsWholePage from "./AboutUs/AboutUsWholePage/AboutUsWholePage";
 
 function App() {
-    return <div>
-        <h1>Hello world</h1>
-    </div>
+  return <AboutUsWholePage></AboutUsWholePage>;
 }
 
 export default App;

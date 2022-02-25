@@ -1,0 +1,19 @@
+.txt-278 {
+  font-size: 48px;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  color: rgba(4, 215, 162, 1);
+  word-wrap: break-word;
+  /* position: absolute; */
+  width: 335px;
+  height: 72px;
+  /* left: 82px;
+  top: 170px;
+} */
+}
+
+@media (max-width: 480px) {
+  .txt-278 {
+    font-size: 30px;
+  }
+}

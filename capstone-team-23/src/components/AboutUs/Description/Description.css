@@ -1,0 +1,42 @@
+/* Findhomecleaninggrasscuttingandmanymoreservicesatyourowncomfortwewillhelpyoutoconnecttoprofessionals */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+p {
+  margin: 0;
+}
+
+.flex-col-hstart-vstart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.find-home-cleaning-grass-cutting-and-many-more-services-at-your-own-comfort-we-will-help-you-to-connect-to-professionals {
+  width: 568px;
+  height: 89px;
+}
+
+.txt-522 {
+  font-size: 22px;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  line-height: 110%;
+  color: rgba(29, 33, 78, 0.35);
+  width: 569px;
+  height: 90px;
+  word-wrap: break-word;
+  /* position: relative; */
+  width: 568px;
+  height: 89px;
+  /* left: 82px;
+  top: 399px; */
+}
+
+@media (max-width: 480px) {
+  .txt-522 {
+    /* font-size: 20px; */
+    overflow-wrap: break-word;
+  }
+}

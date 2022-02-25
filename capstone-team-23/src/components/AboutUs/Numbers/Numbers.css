@@ -1,0 +1,110 @@
+table {
+  /* border: 2px solid black; */
+  margin-left: 1em;
+}
+.Number15 {
+  font-size: 72px;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  line-height: 93%;
+  color: rgba(4, 215, 162, 1);
+  width: 167px;
+  height: 93px;
+  word-wrap: normal;
+  /* position: relative;
+  width: 166px;
+  height: 92px; */
+  /* left: 812px;
+  top: 159px; */
+}
+
+.Services {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 109.5%;
+  color: rgba(29, 33, 78, 0.35);
+  padding-bottom: 50px;
+  /* position: relative; */
+  width: 123px;
+  height: 30px;
+  /* left: 998px;
+  top: 175px; */
+}
+
+.Number24 {
+  /* position: relative; */
+  width: 215px;
+  height: 92px;
+  /* left: 810px;
+  top: 283px; */
+  padding-top: 30px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 93%;
+  /* or 67px */
+
+  color: #04d7a2;
+}
+
+.Available {
+  /* position: relative; */
+  width: 137px;
+  height: 30px;
+  /* left: 998px;
+  top: 305px; */
+  padding-top: 10px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 109.5%;
+  /* or 31px */
+
+  color: rgba(29, 33, 78, 0.35);
+}
+
+.Number100 {
+  /* position: relative; */
+  width: 233px;
+  height: 92px;
+  /* left: 810px;
+  top: 426px; */
+  padding-top: 60px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 93%;
+  /* or 67px */
+
+  color: #04d7a2;
+}
+
+.Professional {
+  /* position: relative; */
+  width: 190px;
+  height: 30px;
+  /* left: 998px;
+  top: 447px; */
+  padding-top: 50px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 109.5%;
+  /* or 31px */
+
+  color: rgba(29, 33, 78, 0.35);
+}
+
+@media (max-width: 480px) {
+  .div {
+    margin-top: 1em;
+  }
+}
