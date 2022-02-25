@@ -1,14 +1,20 @@
+
 .c1 {
   /* border: 1px solid black; */
   padding: 50px;
   margin-top: 5em;
 }
-
+body {
+  box-sizing: border-box;
+}
 .c2 {
   /* border: 1px solid black; */
   padding: 30px;
   padding-left: 5px;
   margin-top: 5em;
+}
+.row-container {
+  margin-top: 175px;
 }
 
 @media (max-width: 480px) {
@@ -18,14 +24,20 @@
   .c1 {
     /* border: 1px solid black; */
     text-align: center;
-    border: 1px solid black;
+  
     margin: 0 auto;
   }
   
   .c2 {
     /* border: 1px solid black; */
     text-align: center;
-    border: 1px solid black;
+    
+  }
+  .row-container {
+    margin-top: 200px;
+   
+    width: 700px;
+    text-align: center;
   }
 }
 

@@ -8,7 +8,8 @@ p {
   width: 324px;
   height: 324px;
   left: -162px;
-  top: 539px;
+  top: 80%;
   border-radius: 162px;
   margin-right: 80%;
+  z-index: -1;
 }

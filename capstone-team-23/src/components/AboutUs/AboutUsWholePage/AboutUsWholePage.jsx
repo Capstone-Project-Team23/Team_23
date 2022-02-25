@@ -5,17 +5,18 @@ import Description from "../Description/Description";
 import Numbers from "../Numbers/Numbers";
 import BottomLeft from "../Circles/Botton-Left/BottomLeft";
 import "./AboutUsWholePage.css";
-
+import Navbar from "../../Reusable Components/Navbar/Navbar";
 function AboutUsWholePage() {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-8 col-sm-12 col-xs-12 col-md-12 c1">
+    <div className="container row-container">
+      <Navbar name1="Contact Us" name2="Login" />
+      <div className="row ">
+        <div className="col-lg-8 col-sm-12 col-xs-12 col-md-12 c1 ">
           <Header></Header>
           <TagLine></TagLine>
           <Description></Description>
         </div>
-        <div className="col-lg-4 col-sm-12 col-xs-12 col-md-12 c2">
+        <div className="col-lg-4 col-sm-12 col-xs-12 col-md-12 c2 ">
           <Numbers></Numbers>
         </div>
         <div>

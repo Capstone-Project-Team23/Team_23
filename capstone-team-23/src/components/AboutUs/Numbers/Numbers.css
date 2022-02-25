@@ -106,5 +106,10 @@ table {
 @media (max-width: 480px) {
   .div {
     margin-top: 1em;
+   
   }
+   table {
+    
+    width: 100%;
+   }
 }
