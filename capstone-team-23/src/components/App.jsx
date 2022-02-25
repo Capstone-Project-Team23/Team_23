@@ -1,8 +1,13 @@
-import react from "react";
-import AboutUsWholePage from "./AboutUs/AboutUsWholePage/AboutUsWholePage";
+
+import React from 'react'
+import SignUpPage from './Sign Up Page/WholePage/SignUpPage'
 
 function App() {
-  return <AboutUsWholePage></AboutUsWholePage>;
+  return (
+    <div>
+ <SignUpPage />
+    </div>
+  )
 }
 
-export default App;
+export default App
