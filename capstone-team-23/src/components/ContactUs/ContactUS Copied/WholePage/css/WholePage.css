@@ -6,7 +6,7 @@ html {
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -15,6 +15,9 @@ body {
 
 .styleSpann {
   color: #04d7a2;
+}
+
+.number {
 }
 
 /* width */
@@ -47,7 +50,7 @@ body {
 
 .imgEllipse {
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
   position: fixed;
   right: 0px;
   z-index: -1;
