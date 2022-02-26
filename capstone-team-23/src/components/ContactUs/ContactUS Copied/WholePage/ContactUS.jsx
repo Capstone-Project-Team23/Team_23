@@ -41,6 +41,16 @@ function SignUpPage(props) {
     </p>
   ]
 
+  const rightContainer = {
+    fontSize: "48px",
+    fontFamily: "poppins, sans-serif",
+    fontWeight: "700",
+    color: "rgba(4, 215, 162, 1)",
+    width: "336px",
+    wordWrap: "break-word"
+
+  }
+
   const html = [
     <Header text={Hed} style={styleHeader} />,
     <br></br>,
@@ -55,15 +65,49 @@ function SignUpPage(props) {
     <br></br>,
     <Button buttonText="Send" width="250px" />,
   ]
+////////////////Left Section/////////////////
+  const HedLeft = [
+    <p>
+        <span className="styleSpann">Contact US</span>
+    </p>
+  ]
 
-  
+  const NumberLeft = [
+    <p>
+        <span className="styleSpann">+1</span> 1234567890
+    </p>
+  ]
+  const htmlLeft = [
+    <Header text={HedLeft} style={styleHeader} />,
+    <br></br>,
+    <Header text={NumberLeft} style={styleHeader} />,
+    <p className="emailLeft">admin@fixitnow.com</p>
+
+   
+  ]
+
+  const styleLeft = {
+    paddingLeft:"20%",
+    width:"100%",
+    height:"auto",
+    margin : "120px auto"
+  }
+  /////////////////Left End////////////////////////////////
   return (
     <div className='container-fluid'>
       <div><Navbar name1="Contact Us"  name2="About"/></div>
       
+            <br></br>
+
             
-        <div className='row col-12 d-flex justify-content-end' >
+        <div className='row' >
           
+        <div className='col-xs-12 col-sm-6 col-md-8 col-lg-6'>
+              
+             <ShadowRect style={styleLeft} html={htmlLeft} />
+           
+          </div>
+         
           <div className='col-xs-12 col-sm-6 col-md-8 col-lg-6'>
             <ShadowRect style={style} html={html} />
           </div>
