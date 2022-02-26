@@ -17,9 +17,6 @@ body {
   color: #04d7a2;
 }
 
-.number {
-}
-
 /* width */
 ::-webkit-scrollbar {
   width: 1px;
