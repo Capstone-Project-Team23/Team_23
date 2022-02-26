@@ -1,11 +1,13 @@
 import React from 'react'
-
+import Homepage from './Home Page/WholePage/HomePage.jsx'
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <><div class = "">
+       
+        <Homepage />
+    
+      </div></>
   )
 }
 

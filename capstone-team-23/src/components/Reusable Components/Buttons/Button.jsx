@@ -5,12 +5,8 @@ function Button(props) {
       textAlign:"Center"
   }}>
   
-    <button  className='login btn' style={{
-        width:props.width,
-        height:props.height,
-
-    }}>
-        <span className="button-text" >{props.buttonText}</span>
+    <button  className='login btn' style={props.style}>
+        <span className="" >{props.buttonText}</span>
     </button>
     </div>)
 }

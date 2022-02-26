@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"version":3,"sources":["Label.scss","Label.css"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,UAAA;ACCJ;;ADCA;EACI,eAAA;EACA,gCAAA;EACA,gBAAA;EACA,iBAAA;EACA,6BAAA;EACA,YAAA;EACA,YAAA;EACA,qBAAA;ACEJ","file":"Label.css"}
-=======
 {"version":3,"sources":["Label.scss","Label.css"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,UAAA;ACCJ;;ADCA;EACI,gBAAA;EACA,gCAAA;EACA,gBAAA;EACA,iBAAA;EACA,6BAAA;EACA,YAAA;EACA,YAAA;ACEJ","file":"Label.css"}
->>>>>>> 671a75db0aac9f9deb379cc1d35983d7454f9bd2

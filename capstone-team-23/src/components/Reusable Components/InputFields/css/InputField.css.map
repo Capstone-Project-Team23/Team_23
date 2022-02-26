@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"version":3,"sources":["InputField.scss","InputField.css"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,UAAA;ACCJ;;ADCA;EACI,2CAAA;EACA,gCAAA;EACA,mBAAA;EACA,YAAA;EACA,kBAAA;ACEJ","file":"InputField.css"}
-=======
 {"version":3,"sources":["InputField.scss","InputField.css"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,UAAA;ACCJ;;ADCA;EACI,2CAAA;EACA,gCAAA;EACA,mBAAA;EACA,YAAA;EACA,YAAA;EACA,gBAAA;ACEJ","file":"InputField.css"}
->>>>>>> 671a75db0aac9f9deb379cc1d35983d7454f9bd2

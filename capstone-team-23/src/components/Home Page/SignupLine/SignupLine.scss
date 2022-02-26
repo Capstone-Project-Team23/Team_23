@@ -1,0 +1,68 @@
+.SignupLine {
+    text-align: center;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    margin-left: 2.4rem;
+}
+.SignupLineText{
+    display: flex;
+    align-self: auto;
+    color: #1d214e;
+    font-size: 3rem;
+
+    font-family: Ubuntu Mono, monospace;
+    font-weight: bold;
+    
+    justify-content: center;
+    margin: 30px;
+}
+
+.SignupButton{
+    margin-left: 2rem;
+    padding: 10px 15px 10px 15px;
+    color: #1d214e;
+    
+}
+.select-css {
+    border-radius: 50px;
+    font-family: Ubuntu Mono, monospace;
+    margin-left: 20px;
+    padding:5px 10px 5px 10px;
+    font-weight: bold;
+    border: none;
+    font-size:1.7rem ;
+    background: white;
+    border: 5px solid rgba(4, 215, 162, 1);
+    width: auto;
+    text-align: center;
+}
+
+.option-css {
+    font-family: Ubuntu Mono, monospace;
+}
+@media (min-width:1025px) {
+    .SignupLine {
+        
+        justify-content: flex-start;
+      
+    }
+    .SignupLineText {
+        font-size: 2.5rem;
+        
+    }
+    .select-css {
+        border-radius: 50px;
+        font-family: Ubuntu Mono, monospace;
+        margin-left: 20px;
+        padding:5px 10px 5px 10px;
+         height: 70px;   
+        font-weight: bold;
+        border: none;
+        font-size:1.7rem ;
+        background: white;
+        border: 5px solid rgba(4, 215, 162, 1);
+        width: auto;
+        text-align: center;
+    }
+}
