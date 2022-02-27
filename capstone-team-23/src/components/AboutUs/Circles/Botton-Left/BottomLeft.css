@@ -1,0 +1,15 @@
+p {
+  margin: 0;
+}
+
+.ellipse-2 {
+  background-color: rgba(4, 215, 162, 1);
+  position: fixed;
+  width: 324px;
+  height: 324px;
+  left: -162px;
+  top: 80%;
+  border-radius: 162px;
+  margin-right: 80%;
+  z-index: -1;
+}
