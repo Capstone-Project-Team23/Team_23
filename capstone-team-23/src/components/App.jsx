@@ -13,9 +13,11 @@ function App() {
 
     <><div class = "">
        
-        <AboutUsWholePage />
+        {/* <AboutUsWholePage /> */}
         
-      
+       <Homepage />
+       
+       {/* <SignUpPage /> */}
       </div></>
 
   )

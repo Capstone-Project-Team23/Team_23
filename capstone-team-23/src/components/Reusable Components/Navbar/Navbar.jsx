@@ -11,7 +11,7 @@ function Navbar(props) {
   return (
     <div className='container-custom' >
       
-        <nav class="navbar navbar-expand-md navbar-light  bg-light fixed-top py-3">
+        <nav class="navbar navbar-expand-md navbar-light  bg-transparent fixed-top py-3">
   <a class="navbar-brand px-5" href="#"><CompanyLogo className="companyLogo" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

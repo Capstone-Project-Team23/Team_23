@@ -1,37 +1,47 @@
 
-.c1 {
-  /* border: 1px solid black; */
+.cc1 {
+ 
   padding: 50px;
   margin-top: 5em;
+  text-align: left;
 }
 body {
   box-sizing: border-box;
+  height:auto;
 }
-.c2 {
-  /* border: 1px solid black; */
+.row {
+
+  width: auto;
+  height: auto;
+}
+
+.cc2 {
+
   padding: 30px;
   padding-left: 5px;
   margin-top: 5em;
 }
+
 .row-container {
-  margin-top: 175px;
+  margin-top: 10rem;
 }
+
 
 @media (max-width: 480px) {
   body {
     text-align: center;
   }
-  .c1 {
+  .cc1 {
     /* border: 1px solid black; */
     text-align: center;
   
     margin: 0 auto;
   }
   
-  .c2 {
+  .cc2 {
     /* border: 1px solid black; */
     text-align: center;
-    
+    margin-top: 0;
   }
   .row-container {
     margin-top: 200px;

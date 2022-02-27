@@ -10,19 +10,19 @@ function AboutUsWholePage() {
   return (
     <div className="container row-container">
       <Navbar name1="Contact Us" name2="Login" />
-      <div className="row ">
-        <div className="col-lg-8 col-sm-12 col-xs-12 col-md-12 c1 ">
+      <div className="row">
+        <div className="col-lg-8 col-sm-12 col-xs-12 col-md-12 cc1">
           <Header></Header>
           <TagLine></TagLine>
           <Description></Description>
         </div>
-        <div className="col-lg-4 col-sm-12 col-xs-12 col-md-12 c2 ">
+
+        <div className="col-lg-4 col-sm-12 col-xs-12 col-md-12 cc2">
           <Numbers></Numbers>
         </div>
-        <div>
-          <BottomLeft></BottomLeft>
-        </div>
+          
       </div>
+      <BottomLeft></BottomLeft>
     </div>
   );
 }
