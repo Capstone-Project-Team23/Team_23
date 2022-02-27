@@ -1,0 +1,135 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+// Header color
+.styleSpann {
+    color: rgba(4, 215, 162, 1);
+}
+
+//EmailLeft
+.emailLeft {
+    font-size: 30px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    color: rgba(195, 197, 208, 1);
+    width: 396px;
+    word-wrap: break-word;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.img {
+    width: 103%;
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -13px;
+}
+
+.imgEllipse {
+    transform: scale(1.2);
+    position: fixed;
+    right: 0px;
+    z-index: -1;
+    top: 200px;
+    margin-left: -13px;
+}
+.row {
+
+    margin-top: 3rem;
+}
+
+.desc-container {
+  
+    margin-top: 8rem;
+    margin-left: 10rem;
+}
+.plusOne {
+    color: #04D7A2;
+    font-size: 30px;
+    font-family: Poppins, sans-serif;
+    font-weight: 700;  
+}
+.plusOne, .other {
+    font-size: 5rem;
+}
+.other {
+    
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    color: rgba(47, 46, 65, 1);
+   
+}
+.twit {
+    transform: scale(1.15);
+}
+.social-list {
+    margin-top: 3rem;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width:20rem;
+}
+@media (max-width: 480px) {
+    .desc-container {
+        margin-left: 0rem;
+      }
+      .plusOne {
+          color: #04D7A2;
+          font-family: Poppins, sans-serif;
+          font-weight: 700;  
+      }
+      .plusOne, .other {
+          font-size: 2.8rem;
+      }
+    
+      .twit {
+          transform: scale(1.15);
+      }
+      .social-list {
+          margin-top: 3rem;
+          padding: 0;
+          display: flex;
+          list-style: none;
+          justify-content: space-between;
+          width:20rem;
+      }
+}

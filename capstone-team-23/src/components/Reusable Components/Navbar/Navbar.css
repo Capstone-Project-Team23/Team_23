@@ -1,0 +1,14 @@
+.companyLogo {
+  padding: 10px !important;
+}
+
+.flex-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (min-width: 480px) {
+  .nav-test {
+    display: none !important;
+  }
+}/*# sourceMappingURL=Navbar.css.map */

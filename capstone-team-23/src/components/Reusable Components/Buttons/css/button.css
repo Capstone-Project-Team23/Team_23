@@ -1,0 +1,20 @@
+p {
+  margin: 0;
+}
+
+.login {
+  padding: 6px 0px 5px 0px;
+  box-sizing: border-box;
+  border-radius: 65px;
+  background-color: white;
+  border: 2px solid #04d7a2;
+  text-align: center;
+}
+
+.button-text {
+  font-size: 15px;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  color: #1d214e;
+  margin: 0 auto;
+}/*# sourceMappingURL=button.css.map */
