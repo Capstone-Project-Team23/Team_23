@@ -10,10 +10,16 @@ import image from './css/Vector.svg'
 import ellipse from './css/Ellipse 5.svg'
 import './css/WholePage.css'
 function SignUpPage(props) {
- 
+  
+  const styleWindows = {
+    width:"22rem",
+    height:"48rem",
+    margin : "120px 14rem"
+  }
+
   const style = {
-    width:"345px",
-    height:"750px",
+    width:"22rem",
+    height:"48rem",
     margin : "120px auto"
   }
   const styleHeader = {
@@ -59,7 +65,9 @@ function SignUpPage(props) {
     <Label  style={labelStyle}  name="Confirm Password" width="250px" />,
     <InputField placeholder="********"  width="250px" type="password" />,
     <br></br>,
-    <Button buttonText="Sign Up" width="250px" />,
+    <Button buttonText="Sign Up" width="250px" style={{
+      width:"250px"
+    }} />,
     <Header text="Already have account?" style={styleFooter}/>,
     <a  href="#"><Header text="Login" style={styleLogin}/></a>,
     <a  href="#"><GoogleButton style={styleGoogle} /></a>
@@ -69,8 +77,9 @@ function SignUpPage(props) {
     <div className='container-fluid'>
       <Navbar name1="Contact Us"  name2="About"/>
     <div className='row'>
-       <div className='col-xs-12 col-sm-6 col-md-8 col-lg-6'>
-         <ShadowRect style={style} html={html} />
+       <div className='col-xs-12 col-sm-6 col-md-8 col-lg-6 space-container'>
+         <div className='space'></div>
+         <ShadowRect style={ window.innerWidth<480 ? style : styleWindows } html={html} />
        </div>
       
     </div>

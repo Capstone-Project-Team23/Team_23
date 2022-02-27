@@ -46,7 +46,10 @@ body {
     top: 200px;
     margin-left: -13px;
 }
-  
+  .space {
+    width: 200rem;
+
+  }
 @media (max-width: 480px) {
     .img {
        display: none;
@@ -55,3 +58,5 @@ body {
        display: none;
     }
 }
+
+

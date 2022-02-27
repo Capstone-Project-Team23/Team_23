@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,iBAAiB;AACjB,AAAA,IAAI,CAAC;EACD,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,KAAK;CAChB;;AACD,AAAA,CAAC,CAAC;EACE,MAAM,EAAE,CAAC;CACV;;AAED,AAAA,aAAa,CAAC;EACZ,OAAO,EAAE,IAAI;EACb,gBAAgB,EAAE,KAAsB;EACxC,UAAU,EAAE,GAAG,CAAC,IAAI,CAAC,IAAI,CAAC,wBAAwB;EAClD,aAAa,EAAE,IAAI;CAEpB",
-    "sources": [
-        "ShadowRect.scss"
-    ],
-    "names": [],
-    "file": "ShadowRect.css"
-}
+{"version":3,"sources":["ShadowRect.scss","ShadowRect.css"],"names":[],"mappings":"AAAA,gBAAA;AACA;EACI,kBAAA;EACA,aAAA;ACCJ;;ADCA;EACI,SAAA;ACEJ;;ADCE;EACE,aAAA;EACA,uBAAA;EACA,kDAAA;EACA,mBAAA;ACEJ","file":"ShadowRect.css"}
