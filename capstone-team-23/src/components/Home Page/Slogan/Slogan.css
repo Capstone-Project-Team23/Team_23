@@ -1,0 +1,21 @@
+.slogan-blue {
+  font-size: 5.5rem;
+  margin-left: 2.4rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  line-height: 105%;
+  color: #1d214e;
+  width: 38rem;
+  word-wrap: break-word;
+  font-weight: bold;
+}
+
+.slogan-green {
+  color: #04d7a2;
+}
+
+@media (min-width: 1025px) {
+  .slogan-blue {
+    width: 44rem;
+  }
+}/*# sourceMappingURL=Slogan.css.map */

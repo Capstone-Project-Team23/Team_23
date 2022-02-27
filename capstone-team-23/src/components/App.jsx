@@ -1,11 +1,13 @@
 import React from 'react'
-import SignUpPage from './Sign Up Page/WholePage/SignUpPage'
+
+import Homepage from './Home Page/WholePage/HomePage.jsx'
 
 function App() {
   return (
-    <div>
- <SignUpPage />
-    </div>
+    <><div class = "">
+       
+        <Homepage />
+      </div></>
   )
 }
 
