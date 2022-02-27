@@ -13,7 +13,7 @@ function ContactUsFormInputFields() {
             <form>
             <div class="form-group">
                 <Label name="Full Name"></Label>
-                <InputField 
+                <InputField  
                     type="text"
                     placeholder="Example: Mari jakson"
                     width = "300px"

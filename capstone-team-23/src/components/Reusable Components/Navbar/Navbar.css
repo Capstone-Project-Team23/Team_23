@@ -3,10 +3,7 @@
 }
 
 .flex-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-
   justify-content: flex-end;
 }
 
