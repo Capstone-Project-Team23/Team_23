@@ -1,4 +1,7 @@
 import React from 'react'
+import {
+  Link, Outlet
+} from 'react-router-dom';
 // import InputField from './Reusable Components/InputFields/InputField'
 // import Label from './Reusable Components/Label/Label'
 // import CompanyLogo from './Reusable Components/CompanyLogo/CompanyLogo'
@@ -16,7 +19,7 @@ function HomePage() {
     <div className='container-fluid'>
       <img className='Man' src={Man}></img>
       <img className='wave' src={Wave}></img>
-      <Navbar name1="About Us" name2="Login" />
+      <Navbar name1="About Us" name2="Login" route1="/about" route2="/"/>
       <div className='row row-custom'>
         <div className="col-xs-12 col-sm-12 col-lg-6 c1">
         <div className='slogan-div'><Slogan /></div>
@@ -27,8 +30,8 @@ function HomePage() {
         </div>
       </div>
       <img className='circle' src={circle}></img>
+      <Outlet/> </div>
       
-      </div>
   )
 }
 

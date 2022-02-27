@@ -23,7 +23,7 @@ export default function SignupLine() {
         <option value="customer" className="option-css">Customer</option>
       </select>
 
-       <Button buttonText = "Signup" style={buttonStyle}/>
+       <a href="/signUp"><Button buttonText = "Signup" style={buttonStyle}/></a>
       
       </span>
     </div>

@@ -75,7 +75,7 @@ function SignUpPage(props) {
 
   return (
     <div className='container-fluid'>
-      <Navbar name1="Contact Us"  name2="About"/>
+      <Navbar name1="Contact Us"  name2="About" route1="contactus" route2="about"/>
     <div className='row'>
        <div className='col-xs-12 col-sm-6 col-md-8 col-lg-6 space-container'>
          <div className='space'></div>
