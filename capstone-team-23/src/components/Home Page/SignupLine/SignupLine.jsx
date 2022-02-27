@@ -5,13 +5,14 @@ import Button from "../../Reusable Components/Buttons/Button"
 export default function SignupLine() {
 
     const buttonStyle = {
-        padding:"10px",
+        padding:"5px",
         backgroundColor: "#1d214e",
         color: "white",
         border:"none",
         marginLeft:"10px",
-        width:"180px",
-        fontSize:"1.7rem"
+        width:"12rem",
+        fontSize:"1.5rem",
+        height: "3.5rem"
     }
   return (
     <div className="SignupLine mt-5">
