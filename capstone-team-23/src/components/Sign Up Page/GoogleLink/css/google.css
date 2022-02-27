@@ -4,7 +4,9 @@ p {
 }
 
 .flex-hcenter {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .google-sign {
@@ -35,4 +37,5 @@ p {
   left: 26px;
   width: 22px;
   height: 25px;
-}/*# sourceMappingURL=google.css.map */
+}
+/*# sourceMappingURL=google.css.map */

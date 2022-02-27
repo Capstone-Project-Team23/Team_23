@@ -7,6 +7,7 @@ function Button(props) {
   
     <button  className='login btn' style={props.style}>
         <span className="" >{props.buttonText}</span>
+
     </button>
     </div>)
 }

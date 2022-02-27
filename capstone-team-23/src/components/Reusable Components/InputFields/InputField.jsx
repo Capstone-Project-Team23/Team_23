@@ -2,6 +2,9 @@ import React from 'react'
 import './css/InputField.css'
 function InputField(props) {
   return (
+
+
+
     <div style={{
       textAlign:"Center"
   }}>
