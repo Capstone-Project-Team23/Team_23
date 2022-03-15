@@ -8,7 +8,7 @@ function InputField(props) {
     <div style={{
       textAlign:"Center"
   }}>
-        <input type={props.type} name={props.name} placeholder={props.placeholder} className="inputField" style={{width: props.width ,height:props.height}} />
+        <input type={props.type} name={props.name} placeholder={props.placeholder} className="inputField" value={props.value} onChange={props.onChange} style={{width: props.width ,height:props.height}} />
     </div>
   )
 }
