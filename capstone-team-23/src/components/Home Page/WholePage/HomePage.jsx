@@ -11,13 +11,18 @@ import Navbar from '../../Reusable Components/Navbar/Navbar.jsx'
 import SignupLine from '../SignupLine/SignupLine'
 import './HomePage.css'
 import circle from '../SignupLine/circle.svg'
-import Man from './Man.svg'
+import Man1 from './Man1.svg'
+import Man2 from './Man2.svg'
 import Wave from './wave.svg'
+import {useState} from 'react'
 function HomePage() {
+
+   
 
   return (
     <div className='container-fluid'>
-      <img className='Man' src={Man}></img>
+      <img className='Man' src={Man1}></img>
+  
       <img className='wave' src={Wave}></img>
       <Navbar name1="About Us" name2="Login" route1="/about" route2="/"/>
       <div className='row row-custom'>
@@ -30,7 +35,10 @@ function HomePage() {
         </div>
       </div>
       <img className='circle' src={circle}></img>
-      <Outlet/> </div>
+      <Outlet/> 
+      
+      
+      </div>
       
   )
 }

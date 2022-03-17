@@ -17,7 +17,7 @@ function ContactUs(props) {
   return (
     <div className="container-fluid">
       <div>
-        <Navbar name1="About" name2="Login" route1="about" route2=""/>
+        <Navbar name1="About" name2="Login" route1="/about" route2="/login"/>
       </div>
 
       <br></br>

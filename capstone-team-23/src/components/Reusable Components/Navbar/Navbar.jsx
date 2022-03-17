@@ -1,10 +1,8 @@
 import React from 'react'
 import CompanyLogo from '../CompanyLogo/CompanyLogo'
 import Button from '../Buttons/Button'
+import { Link } from 'react-router-dom';
 
-import {
-  Link, Outlet
-} from 'react-router-dom';
 
 function Navbar(props) {
   const style = {
@@ -23,15 +21,15 @@ function Navbar(props) {
   <div class="collapse navbar-collapse justify-content-end px-5 " id="navbarNav">
     <ul class="navbar-nav px-5 ">
       <li class="nav-item">
-        <a class="nav-link" href={props.route1}><Button buttonText={props.name1} style={style} /></a>
+        <Link class="nav-link" to={props.route1}><Button buttonText={props.name1} style={style} /></Link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href={props.route2}><Button buttonText={props.name2}  style={style}/></a>
+        <Link class="nav-link" to={props.route2}><Button buttonText={props.name2}  style={style}/></Link>
       </li>
     </ul>
   </div>
 </nav>
-<Outlet/>
+
     </div>
     
   )

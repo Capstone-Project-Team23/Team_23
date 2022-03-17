@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import InputField from '../../Reusable Components/InputFields/InputField'
 import Label from '../../Reusable Components/Label/Label'
 import Navbar from '../../Reusable Components/Navbar/Navbar'
@@ -9,8 +9,50 @@ import GoogleButton from '../GoogleLink/GoogleButton'
 import image from './css/Vector.svg'
 import ellipse from './css/Ellipse 5.svg'
 import './css/WholePage.css'
+import {useSelector} from 'react-redux';
+import initializeAuthentication from '../../../firebase/firebase-init'
+import {GoogleAuthProvider ,getAuth, signInWithPopup , onAuthStateChanged} from 'firebase/auth'
+import firebaseConfig from '../../../firebase/firebase'
+import { Link, Route, useNavigate  } from 'react-router-dom'
+import CustomerDashboard from '../../Customer_Main/CustomerDashboard'
+import {BrowserRouter as Router, Switch} from 'react-router-dom'
+
+
+
 function SignUpPage(props) {
-  
+  //authentication logic
+  initializeAuthentication();
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth();
+  const [isUserSignedIn, setIsUserSignedIn] = useState(true)
+  const navigate = useNavigate ()
+  const handleGoogleSignIn = () => {
+    if(!isUserSignedIn) {
+      signInWithPopup(auth, provider)
+      .then(result => {
+        //console.log(result)
+        const user = result.user
+      }).catch((error) => {
+        console.log(error)
+      })
+    } 
+  }
+  onAuthStateChanged( auth ,(user) => {
+    if(user) {
+      return setIsUserSignedIn(true)     
+    }
+
+    setIsUserSignedIn(false)
+  })
+  console.log(isUserSignedIn)
+
+  if(isUserSignedIn) {
+    navigate('/customerdashboard')
+  }
+  // authentication logic ends
+
+  const selection = useSelector(state => state.selection)
+
   const styleWindows = {
     width:"22rem",
     height:"48rem",
@@ -48,7 +90,7 @@ function SignUpPage(props) {
     
   }
   const html = [
-    <Header text={"Sign Up as " + "Props"} style={styleHeader} />,
+    <Header text={"Sign Up as " + selection} style={styleHeader} />,
     <br></br>,
     <Label  style={labelStyle} name="First Name" />,
     <InputField placeholder="John" width="250px"/>,
@@ -70,12 +112,12 @@ function SignUpPage(props) {
     }} />,
     <Header text="Already have account?" style={styleFooter}/>,
     <a  href="#"><Header text="Login" style={styleLogin}/></a>,
-    <a  href="#"><GoogleButton style={styleGoogle} /></a>
+    <a  href="#" onClick={handleGoogleSignIn} ><GoogleButton  style={styleGoogle} /></a>
   ]
 
   return (
     <div className='container-fluid'>
-      <Navbar name1="Contact Us"  name2="About" route1="contactus" route2="about"/>
+      <Navbar name1="Contact Us"  name2="About" route1="/contactus" route2="/about"/>
     <div className='row'>
        <div className='col-xs-12 col-sm-6 col-md-8 col-lg-6 space-container'>
          <div className='space'></div>
