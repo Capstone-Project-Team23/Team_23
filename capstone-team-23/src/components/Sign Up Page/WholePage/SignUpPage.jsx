@@ -15,7 +15,7 @@ import {GoogleAuthProvider ,getAuth, signInWithPopup , onAuthStateChanged} from 
 import firebaseConfig from '../../../firebase/firebase'
 import { Link, Route, useNavigate  } from 'react-router-dom'
 import CustomerDashboard from '../../Customer_Main/CustomerDashboard'
-import {BrowserRouter as Router, Switch} from 'react-router-dom'
+
 
 
 
@@ -44,7 +44,7 @@ function SignUpPage(props) {
 
     setIsUserSignedIn(false)
   })
-  console.log(isUserSignedIn)
+ // console.log(isUserSignedIn)
 
   if(isUserSignedIn) {
     navigate('/customerdashboard')
@@ -121,7 +121,7 @@ function SignUpPage(props) {
     <div className='row'>
        <div className='col-xs-12 col-sm-6 col-md-8 col-lg-6 space-container'>
          <div className='space'></div>
-         <ShadowRect style={ window.innerWidth<480 ? style : styleWindows } html={html} />
+         <ShadowRect style={ window.innerWidth<480 ? style : styleWindows } html={html} key={1} />
        </div>
       
     </div>
