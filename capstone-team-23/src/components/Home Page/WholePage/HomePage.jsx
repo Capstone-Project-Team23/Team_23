@@ -19,7 +19,7 @@ function HomePage() {
     <div className='container-fluid'>
       <img className='Man' src={Man}></img>
       <img className='wave' src={Wave}></img>
-      <Navbar name1="About Us" name2="Login" route1="/about" route2="/"/>
+      <Navbar name1="About Us" name2="Login" route1="/about" route2="/login"/>
       <div className='row row-custom'>
         <div className="col-xs-12 col-sm-12 col-lg-6 c1">
         <div className='slogan-div'><Slogan /></div>
