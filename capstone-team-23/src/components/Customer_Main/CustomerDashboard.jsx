@@ -14,6 +14,7 @@ const sign_Out = () => {
       navigate('/')
     }).catch((error) => {
       // An error happened.
+      //ok
     });
 } 
   return (
