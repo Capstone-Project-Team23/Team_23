@@ -12,6 +12,7 @@ import AboutUsWholePage from './AboutUs/AboutUsWholePage/AboutUsWholePage.jsx'
 
 import CustomerDashboard from './Customer_Main/CustomerDashboard.jsx';
 import Login from './Login/WholePage/Login.jsx';
+import FilterService from './FilterService/FilterService.jsx';
 import { useDispatch, useSelector } from "react-redux"
 import initializeAuthentication from '../firebase/firebase-init'
 import {GoogleAuthProvider ,getAuth, signInWithPopup , onAuthStateChanged} from 'firebase/auth'
@@ -48,7 +49,7 @@ function App() {
        <Route path="/customerdashboard" element = {loginStatus ? <CustomerDashboard /> : <SignUpPage/> } />
 
        <Route path="/login" element={<Login/>} />
-
+       <Route exact path="/filterService" element={<FilterService/>} />
        </Routes>
       </div></Router>
 

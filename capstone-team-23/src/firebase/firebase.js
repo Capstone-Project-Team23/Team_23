@@ -4,6 +4,7 @@
 // // https://firebase.google.com/docs/web/setup#available-libraries
 
 // // Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyDUyu8W_XYPqR725wK5hlzxcLCzOvUTu78",
   authDomain: "capstone-project-19f6d.firebaseapp.com",
