@@ -25,9 +25,9 @@ const sign_Out = () => {
         <SearchBar></SearchBar>
 
         <p>Make work Easier with FixItNow</p>
-        <div>
+        
           <Card></Card>
-        </div>
+        
         
     </div>
   )
