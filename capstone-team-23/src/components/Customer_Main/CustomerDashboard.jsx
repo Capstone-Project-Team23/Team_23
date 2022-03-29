@@ -2,6 +2,7 @@ import React from 'react'
 import { getAuth, signOut } from "firebase/auth";
 import initializeAuthentication from '../../firebase/firebase-init'
 import {  useNavigate  } from 'react-router-dom'
+import SearchBar from '../Reusable Components/SearchBar/SearchBar';
 
 function CustomerDashboard() {
     
@@ -20,6 +21,7 @@ const sign_Out = () => {
   return (
     <div>CustomerDashboard
         <button className='btn btn-primary' onClick={sign_Out}>Sign Out</button>
+        <SearchBar></SearchBar>
     </div>
   )
 }
