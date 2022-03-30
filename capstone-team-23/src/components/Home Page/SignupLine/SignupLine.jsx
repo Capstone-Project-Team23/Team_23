@@ -27,7 +27,8 @@ export default function SignupLine() {
         marginLeft:"10px",
         width:"12rem",
         fontSize:"1.5rem",
-        height: "3.5rem"
+        height: "3.5rem",
+        borderRadius:"200px"
     }
   return (
     <div className="SignupLine mt-5">
@@ -39,7 +40,7 @@ export default function SignupLine() {
         
       </select>
 
-       <Link to="/signUp"><Button buttonText = "Signup" style={buttonStyle}/></Link>
+       <Link to="/signUp"><button style={buttonStyle}>Signup</button></Link>
       
       </span>
     </div>

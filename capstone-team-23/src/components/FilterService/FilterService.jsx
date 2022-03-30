@@ -1,4 +1,4 @@
-import React, { Children, useState } from 'react'
+import React, { Children, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import initializeAuthentication from '../../firebase/firebase-init'
 import db from '../../firebase/firestore'
@@ -15,25 +15,31 @@ function FilterService() {
 //   const arrOfNames = ['Deep', 'Anchal', 'Jeel', 'Parth', 'Shukla', 'Aman', 'Shreya', 'John'] 
 //   const [rand, setRand] = useState(0);
 
-async function getAllData() {
-    const querySnapshot = await getDocs(collection(db, 'Professional'));
-    querySnapshot.forEach((doc) => {
-        const fetchedService = doc.data().Service
-        if(fetchedService === chosenService) {
-          //  console.log(doc.data().Service)
-          tempArray.push(doc.data())
-           
-        }
-        
-    })
 
-    
-}
+useEffect(async function getAllData() {
+  const querySnapshot = await getDocs(collection(db, 'Professional'));
+  querySnapshot.forEach((doc) => {
+      const fetchedService = doc.data().Service
+      if(fetchedService === chosenService) {
+        //  console.log(doc.data().Service)
+        tempArray.push(doc.data())
+      }
+      
+  })
+  setFilteredCards(tempArray)
+},  [])
 
-getAllData();
-//setFilteredCards(tempArray)
+
+
   return (
-    <div>This is service by
+    <div>
+      <div className="d-flex flex-row flex-wrap justify-content-center card-container" >
+      {
+        filteredCards.map(m => (
+          <Card service={m.Name + "-" +m.Service} ImageSrc={"https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"} />
+        ))
+      }
+      </div>
         {/* <button className='btn btn-danger' onClick={() => {
             // const docRef = addDoc(collection(db, "Professional"), {
             //     Name: "Ada",
@@ -45,14 +51,10 @@ getAllData();
             }
             const docRef = addDoc(collection(db, 'Professional'), temp )
         }}> Click</button> */
-       
-       
-        tempArray.map(card => (
-            <Card service= {card.Service} />
-            
-        ))
-       
+
+        
         }
+
 
 
     </div>

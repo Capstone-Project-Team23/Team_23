@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function Navbar(props) {
   const style = {
     padding:"8px",
-    width:"120px",
+    width:"150px",
     color: "rgba(29, 33, 78, 1)"
   }
   return (
