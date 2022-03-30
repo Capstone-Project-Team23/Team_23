@@ -1,11 +1,11 @@
 .slogan-blue {
-    font-size: 5.5rem;
+    font-size: 3rem;
     margin-left:2.4rem;
     font-family: Poppins, sans-serif;
     font-weight: 700;
     line-height: 105%;
     color: rgba(29, 33, 78, 1);
-    width: 38rem;
+    width: 20rem;
     word-wrap: break-word;
     font-weight:bold ;
   }
@@ -16,6 +16,7 @@
 
   @media (min-width:1025px) {
    .slogan-blue {
+    font-size: 5rem;
      width:44rem
    }
 }

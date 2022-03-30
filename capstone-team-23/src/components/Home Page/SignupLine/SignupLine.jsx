@@ -25,14 +25,14 @@ export default function SignupLine() {
         color: "white",
         border:"none",
         marginLeft:"10px",
-        width:"12rem",
-        fontSize:"1.5rem",
-        height: "3.5rem",
+        width:"7rem",
+        fontSize:"1.2rem",
+        height: "3rem",
         borderRadius:"200px"
     }
   return (
     <div className="SignupLine mt-5">
-      <span  className="SignupLineText">I am 
+      <span  className="SignupLineText"> <span className="Iam">I am </span> 
      
       <select name="loginOptions" className="select-css" onChange={selectionChanged}>
       <option value="customer" className="option-css">Customer</option>

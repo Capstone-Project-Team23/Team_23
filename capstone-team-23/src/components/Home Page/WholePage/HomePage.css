@@ -14,8 +14,11 @@
 }
 
 .c1 {
-  margin-top: 400px;
+  margin: 120px auto;
   text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 body {
@@ -25,7 +28,7 @@ body {
 .circle {
   position: fixed;
   top: 30%;
-  transform: scale(2);
+  transform: scale(1);
 }
 
 .Man, .wave {
@@ -35,8 +38,12 @@ body {
 @media (min-width: 1025px) {
   .c1 {
     margin-top: 200px;
-    margin-left: 100px;
+    margin-left: 2rem;
     text-align: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 10rem auto;
   }
 
   .row {
@@ -49,14 +56,5 @@ body {
     z-index: 3000;
     top: 1rem;
     right: 8rem;
-  }
-
-  .wave {
-    display: inline-block;
-    position: absolute;
-    z-index: -3000;
-    opacity: 0.5;
-    top: 0;
-    right: 0;
   }
 }/*# sourceMappingURL=HomePage.css.map */

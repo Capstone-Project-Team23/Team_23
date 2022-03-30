@@ -42,7 +42,7 @@ return (
   <div className='container-fluid'>CustomerDashboard
       <Navbar name1="Post Request" name2="Login" route1="/postrequest" route2="/login"/>
      <img src={Wave} className="wave" />
-<div className="dash-container">
+<div className="dash-container container">
   <Button buttonText="Sign Out" style={{width:"120px"}} onClick={sign_Out} />
 
       <SearchBar></SearchBar>

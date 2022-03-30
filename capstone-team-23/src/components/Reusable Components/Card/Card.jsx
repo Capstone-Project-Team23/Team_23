@@ -12,10 +12,10 @@ function Card(props){
   return(
      <div class="card" style={{width: "18rem" , margin:'1rem'}  }>
   <img class="card-img-top" src={props.ImageSrc} alt="Card image cap"/>
-  <div class="card-body">
+  <div class="card-body mx-auto">
     <h5 class="card-title"> <Header text={props.service} style={{fontSize:"1.5rem"}} /> </h5>
     <Link to={'/filterService'} 
-    onClick={() => dispatch(chooseService(props.service))}><Button buttonText="Find Professionals" style={{padding:".5rem", marginLeft:"-6rem"}}/></Link>
+    onClick={() => dispatch(chooseService(props.service))}><Button buttonText="Find Professionals" style={{padding:".5rem", marginLeft:"-1rem"}}/></Link>
  
   </div>
 </div>

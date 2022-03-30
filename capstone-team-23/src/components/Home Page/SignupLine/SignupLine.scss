@@ -1,25 +1,29 @@
 .SignupLine {
     text-align: center;
-    width: 700px;
+    width: 22rem;
     display: flex;
     justify-content: center;
-    margin-left: 2.4rem;
+    margin: 0 auto;
+    //border: 1px solid red;
+}
+.Iam {
+    font-size: 1.1rem;
 }
 .SignupLineText{
     display: flex;
     align-self: auto;
     color: #1d214e;
-    font-size: 3rem;
+    font-size: 1rem;
 
     font-family: Ubuntu Mono, monospace;
     font-weight: bold;
     
     justify-content: center;
-    margin: 30px;
+    margin: 20px;
 }
 
 .SignupButton{
-    margin-left: 2rem;
+    margin-left: 1rem;
     padding: 10px 15px 10px 15px;
     color: #1d214e;
     
@@ -28,13 +32,14 @@
     border-radius: 50px;
     font-family: Ubuntu Mono, monospace;
     margin-left: 20px;
-    padding:5px 10px 5px 10px;
+   // padding:5px 10px 5px 10px;
     font-weight: bold;
     border: none;
-    font-size:1.7rem ;
+    font-size:1.3rem ;
     background: white;
-    border: 5px solid rgba(4, 215, 162, 1);
-    width: auto;
+    border: 3px solid rgba(4, 215, 162, 1);
+    //width: auto;
+    height: 3.3rem;
     text-align: center;
 }
 
@@ -45,7 +50,9 @@
     .SignupLine {
         
         justify-content: flex-start;
-      
+        width: fit-content;
+        margin-left: 6rem;
+        margin: 0 auto;
     }
     .SignupLineText {
         font-size: 2rem;  
@@ -60,9 +67,12 @@
         border: none;
         font-size:1.7rem ;
         background: white;
-        border: 5px solid rgba(4, 215, 162, 1);
+        border: 3px solid rgba(4, 215, 162, 1);
         
         text-align: center;
+    }
+    .Iam {
+        font-size: 2rem;
     }
     
 }
