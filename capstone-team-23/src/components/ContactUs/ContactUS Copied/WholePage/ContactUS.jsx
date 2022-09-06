@@ -12,12 +12,14 @@ import fb from './css/fb.svg'
 import insta from './css/insta.svg'
 import twit from './css/twit.svg'
 import {styleHeader_ContactUs, styleHeader_ContactUs_mobile, email_style} from'./contactusstyle'
+
+
 function ContactUs(props) {
 
   return (
     <div className="container-fluid">
       <div>
-        <Navbar name1="About" name2="Login" route1="about" route2=""/>
+        <Navbar name1="About" name2="Login" route1="/about" route2="/login"/>
       </div>
 
       <br></br>

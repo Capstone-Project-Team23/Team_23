@@ -1,37 +1,35 @@
 import React from 'react'
 import CompanyLogo from '../CompanyLogo/CompanyLogo'
 import Button from '../Buttons/Button'
+import { Link } from 'react-router-dom';
 
-import {
-  Link, Outlet
-} from 'react-router-dom';
 
 function Navbar(props) {
   const style = {
     padding:"8px",
-    width:"120px",
+    width:"150px",
     color: "rgba(29, 33, 78, 1)"
   }
   return (
     <div className='container-custom' >
       
-        <nav class="navbar navbar-expand-md navbar-light  bg-white fixed-top py-3">
-  <a class="navbar-brand px-5" href="/"><CompanyLogo className="companyLogo" /></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+        <nav className="navbar navbar-expand-md navbar-light  bg-white fixed-top py-3">
+  <a className="navbar-brand px-5" href="/"><CompanyLogo className="companyLogo" /></a>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse justify-content-end px-5 " id="navbarNav">
-    <ul class="navbar-nav px-5 ">
-      <li class="nav-item">
-        <a class="nav-link" href={props.route1}><Button buttonText={props.name1} style={style} /></a>
+  <div className="collapse navbar-collapse justify-content-end px-5 " id="navbarNav">
+    <ul className="navbar-nav px-5 ">
+      <li className="nav-item">
+        <Link className="nav-link" to={props.route1}><Button buttonText={props.name1} style={style} /></Link>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href={props.route2}><Button buttonText={props.name2}  style={style}/></a>
+      <li className="nav-item">
+        <Link className="nav-link" to={props.route2}><Button buttonText={props.name2}  style={style}/></Link>
       </li>
     </ul>
   </div>
 </nav>
-<Outlet/>
+
     </div>
     
   )

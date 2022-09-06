@@ -9,7 +9,7 @@ import Navbar from "../../Reusable Components/Navbar/Navbar";
 function AboutUsWholePage() {
   return (
     <div className="container row-container">
-      <Navbar name1="Contact Us" name2="Login"  route1="contactus" route2=""/>
+      <Navbar name1="Contact Us" name2="Login"  route1="/contactus" route2="/login"/>
       <div className="row">
         <div className="col-lg-8 col-sm-12 col-xs-12 col-md-12 cc1">
           <Header></Header>

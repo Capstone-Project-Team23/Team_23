@@ -11,26 +11,38 @@ import Navbar from '../../Reusable Components/Navbar/Navbar.jsx'
 import SignupLine from '../SignupLine/SignupLine'
 import './HomePage.css'
 import circle from '../SignupLine/circle.svg'
-import Man from './Man.svg'
+import Man1 from './Man1.svg'
+import Man2 from './Man2.svg'
 import Wave from './wave.svg'
-function HomePage() {
+import {useState} from 'react'
+import AboutUsWholePage from '../../AboutUs/AboutUsWholePage/AboutUsWholePage';
 
+function HomePage() {
+{/* <img className='circle' src={circle}></img> */}
+      
+      {/* <AboutUsWholePage /> */}
+   
+      {/* <img className='Man' src={Man1}></img>
+  
+      <img className='wave' src={Wave}></img> */}
   return (
     <div className='container-fluid'>
-      <img className='Man' src={Man}></img>
-      <img className='wave' src={Wave}></img>
-      <Navbar name1="About Us" name2="Login" route1="/about" route2="/"/>
-      <div className='row row-custom'>
-        <div className="col-xs-12 col-sm-12 col-lg-6 c1">
+
+      <Navbar name1="About Us" name2="Login" route1="/about" route2="/login"/>
+      <div className='row row-custom  '>
+        {/* <div className="col-xs-12 col-sm-12 col-lg-6 c1">
+          
         <div className='slogan-div'><Slogan /></div>
         <SignupLine />
-        </div>
-        <div className="col-xs-12 col-sm-12 col-lg-6 c2">
-
-        </div>
+        </div> */}
+       <div className="col-xs-12 col-sm-12 col-lg-12 c1 ">
+       <div className='slogan-div'><Slogan /></div>
+       <SignupLine />
+       
+       </div>
       </div>
-      <img className='circle' src={circle}></img>
-      <Outlet/> </div>
+    
+      </div>
       
   )
 }
