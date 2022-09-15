@@ -1,1 +1,1 @@
-{"version":3,"sources":["Slogan.scss","Slogan.css"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,mBAAA;EACA,gCAAA;EACA,gBAAA;EACA,iBAAA;EACA,cAAA;EACA,YAAA;EACA,qBAAA;EACA,iBAAA;ACCJ;;ADEE;EACE,cAAA;ACCJ;;ADEE;EACC;IACC,eAAA;IACC,YAAA;ECCH;AACF","file":"Slogan.css"}
+{"version":3,"sources":["Slogan.scss","Slogan.css"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,mBAAA;EACA,gCAAA;EACA,gBAAA;EACA,iBAAA;EACA,sBAAA;EACA,YAAA;EACA,qBAAA;EACA,iBAAA;ACCJ;;ADEE;EACE,uBAAA;ACCJ;;ADEE;EACC;IACC,eAAA;IACC,YAAA;ECCH;AACF","file":"Slogan.css"}

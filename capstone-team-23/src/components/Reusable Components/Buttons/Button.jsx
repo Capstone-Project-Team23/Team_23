@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../Header/Header'
 import './css/button.css'
 function Button(props) {
-  return (<div style={{
+  return (<span style={{
       textAlign:"Center"
   }}>
   
@@ -10,7 +10,7 @@ function Button(props) {
         {/* <span className="" >{props.buttonText}</span> */}
         <Header text={props.buttonText} style={{fontSize:"1rem"}} />
     </button>
-    </div>)
+    </span>)
 }
 
 export default Button
