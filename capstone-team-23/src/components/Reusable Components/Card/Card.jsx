@@ -18,7 +18,7 @@ function Card(props){
     onClick={() => dispatch(chooseService(props.service))}><Button buttonText="Find Professionals" style={{padding:".5rem", marginLeft:"-1rem"}}/></Link>
  
   </div>
-</div>
+</div> 
     
     )
 }

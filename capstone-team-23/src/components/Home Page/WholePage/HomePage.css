@@ -45,11 +45,9 @@ body {
     width: fit-content;
     margin: 10rem auto;
   }
-
   .row {
     width: 700px;
   }
-
   .Man {
     display: inline-block;
     position: absolute;

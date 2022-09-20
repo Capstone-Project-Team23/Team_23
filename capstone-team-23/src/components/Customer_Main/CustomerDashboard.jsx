@@ -10,6 +10,9 @@ import InputField from '../Reusable Components/InputFields/InputField';
 import Button from '../Reusable Components/Buttons/Button';
 import Header from '../Reusable Components/Header/Header';
 import Wave from './Images/wave.svg'
+import Container from './Popup/Container';
+
+
 function CustomerDashboard() {
  
  const arrOfServices = [
@@ -38,16 +41,29 @@ const sign_Out = () => {
       
     });
 } 
+
+//onsubmit for popup button
+const triggerText = 'Open form';
+  const onSubmit = (event) => {
+    event.preventDefault(event);
+    console.log(event.target.name.value);
+    console.log(event.target.email.value);
+  };
 return (
   <div className='container-fluid'>CustomerDashboard
-      <Navbar name1="Post Request" name2="Login" route1="/postrequest" route2="/login"/>
+      <Navbar name1="Contact Us" name2="About Us" route1="/contactus" route2="/about"/>
      <img src={Wave} className="wave" />
 <div className="dash-container container">
   <Button buttonText="Sign Out" style={{width:"120px"}} onClick={sign_Out} />
+  
 
-      <SearchBar></SearchBar>
-      
-   
+      {/* <SearchBar></SearchBar>
+       making popup for post request here
+      */}
+          <Container triggerText={triggerText} onSubmit={onSubmit} />
+
+
+
       <Header text="Make work Easier with FixItNow" style={{marginTop:"3rem"}} /> 
     <div className="d-flex flex-row flex-wrap justify-content-center card-container" >
       {arrOfServices.map( serv => (
