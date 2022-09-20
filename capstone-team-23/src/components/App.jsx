@@ -48,6 +48,12 @@ function App() {
        <Route path="/signUp" element={<SignUpPage/>} />
        <Route path="/contactUs" element={<ContactUS/>} />
 
+    {/* 
+    Testing the professional Side of the App, routing
+    */}
+     <Route path="/professionaldashboard" element={<ProfessionalDashboard />} />
+  
+
        {/* <Route path="/dashboard" element = {(loginStatus===true && selection==="Customer") ? <CustomerDashboard /> : (loginStatus===true && selection==="Professional") ? <ProfessionalDashboard/> : <SignUpPage/> } /> */}
        <Route path="/customerdashboard" element = { loginStatus===true ? <CustomerDashboard /> : <SignUpPage/> } />
        <Route path="/postrequest" element = { loginStatus===true ? < PostRequestForm/> : <SignUpPage/> } />

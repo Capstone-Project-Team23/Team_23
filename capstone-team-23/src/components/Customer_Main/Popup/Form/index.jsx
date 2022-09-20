@@ -26,10 +26,11 @@ export const Form = () => {
  }
 */}
  
-let [service, setService] = useState()
+let [service, setService] = useState("Electrical Services")
 let [location, setLocation] = useState()
 let [budget, setBudget] = useState()
 let [description, setDescription] = useState()
+
 
 
 const arrOfServices = [
@@ -90,6 +91,8 @@ const onSubmit = () => {
     budget
   }
   const docRef = addDoc(collection(db, 'Requests'), pushingObject )
+
+  alert("Data is updated")
 }
 
   return (

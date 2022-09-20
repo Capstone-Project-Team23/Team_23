@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@500;700&display=swap');
+body {
+    background-color:hsl(180, 52%, 96%) ;
+}
+
+.card-container {
+    border: 1px solid white;
+    width: 90%;
+    margin: 2rem auto;
+    position: relative;
+    font-family: 'League Spartan';
+    background-color: white;
+box-shadow: 0.2rem 0.4rem 1rem rgb(91 164 164 / 30%);
+    border-radius: 7px;
+    padding: 8px;
+}
+.side {
+    position: absolute;
+    height: 100%;
+    width: 1.5%;
+    left: 0;
+    top: 0;
+    border-radius: 10px 0px 0px 10px;
+    background-color: hsl(180, 29%, 50%);
+}
+.companyImg {
+    width: 3.5rem ;
+    height: 3.5rem ;
+    position: absolute;
+    top: -1.7rem;
+    left: 1.2rem;
+}
+.company-new-featured-container {
+    display :flex;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+    margin-left: 10px;
+    align-items: center;
+    width:90%;
+}
+.companyName {
+    font-size: 1.15rem;
+    color:#63baba;
+    font-weight: bold;
+}
+.New, .featured {
+    border-radius: 50px;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+}
+.New {
+    background-color:#63baba;    
+    padding: 7px 12px;
+    
+}
+.featured {
+    background-color: hsl(180, 14%, 20%);
+    padding: 7px 12px;
+}
+.job-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 85%;
+    padding-left:.7rem;
+    margin-top: 15px;
+    line-height: 1;
+}
+.job-char-container {
+    display: flex;
+    justify-content: space-around;
+    width: 82%;
+    margin-top: 20px;
+    color:  hsla(180, 8%, 52%, 0.789);
+    font-size: 1.1rem;
+}
+hr {
+    margin: 20px auto;
+    width: 90%;
+    height: 0px;
+    background-color: hsla(180, 8%, 52%, 0.386);
+}
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+.tag-item {
+    padding: 7px;
+    margin: 10px;
+    background-color: hsl(180, 52%, 96%);
+    color: #63baba;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: .2s all;
+}
+.tag-item:hover  {
+    color: white;
+    background-color: #63baba;
+}
+@media (min-width:1025px) { 
+    .side {
+        width: .4%;
+        margin: 0;
+    }
+    .companyImg {
+        position: static;
+    }
+    .card-container{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    .company-new-featured-container {
+        margin-top: 0;
+        width: 55%;
+    }
+ 
+    .otherThanPhoto {
+        width: 30rem;
+    }
+    hr {
+        display: none;
+    }
+    .photo-desc-container {
+        display: flex;
+    }
+    .job-title {
+    }
+    .tags-container {
+        align-items: center;
+    }
+    .job-char-container {
+        width: 60%;
+        margin-left: 10px;
+        justify-content: space-between;
+    }
+    .companyImg {
+        margin-top:10px ;
+        width: 5rem;
+        height:5rem ;
+    }
+}
