@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux"
 import initializeAuthentication from '../firebase/firebase-init'
 import {GoogleAuthProvider ,getAuth, signInWithPopup , onAuthStateChanged} from 'firebase/auth'
 import { Not_Authenticated, Yes_Authenticated } from '../redux/actions/AuthenticatedAction.js';
+import SignUpProfessional from './SignUpProfessional/WholePage/SignUpProfessional.jsx';
 function App() {
   
   initializeAuthentication();
@@ -47,6 +48,7 @@ function App() {
        <Route path="/about" exact element={<AboutUsWholePage/>} />
        <Route path="/signUp" element={<SignUpPage/>} />
        <Route path="/contactUs" element={<ContactUS/>} />
+       <Route path="/signUpProfessional" element={<SignUpProfessional/>} />
 
     {/* 
     Testing the professional Side of the App, routing
