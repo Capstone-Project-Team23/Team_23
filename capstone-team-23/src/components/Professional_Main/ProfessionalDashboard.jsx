@@ -23,7 +23,7 @@ function ProfessionalDashboard() {
   },  [])
   return (
     <div>
-      <Navbar name1="Contact Us" name2="About Us" route1="/contactus" route2="/about"/>
+      <Navbar name1="Contact Us" name2="About Us" route1="/contactus" route2="/about" profileShow={true} />
       <div style={{marginTop:"10rem"}}>
     <Card key="1" Name={"FixItNow"} New={"New"} location={"info.location"}  
     src={img} description={"This is the test"} service={"Plumbing"} Budget={"$3000"} postedAt={"3 Weeks Ago"} />
