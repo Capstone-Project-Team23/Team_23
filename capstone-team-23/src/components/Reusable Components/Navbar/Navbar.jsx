@@ -27,7 +27,7 @@ function Navbar(props) {
         <Link className="nav-link" to={props.route2}><Button buttonText={props.name2}  style={style}/></Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to={'ProfilePage'}>{props.profileShow ? <img src={faceit} style={{height:'3rem', width:'3rem'}} alt="" /> : ''}</Link>
+        <Link className="nav-link" to={'/ProfilePage'}>{props.profileShow ? <img src={faceit} style={{height:'3rem', width:'3rem'}} alt="" /> : ''}</Link>
       </li>
     </ul>
   </div>

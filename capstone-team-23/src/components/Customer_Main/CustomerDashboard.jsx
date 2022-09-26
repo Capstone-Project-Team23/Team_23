@@ -12,6 +12,7 @@ import Header from '../Reusable Components/Header/Header';
 import Wave from './Images/wave.svg'
 import Container from './Popup/Container';
 
+import { Link } from 'react-router-dom';
 
 function CustomerDashboard() {
  
@@ -55,7 +56,8 @@ return (
      <img src={Wave} className="wave" />
 <div className="dash-container container">
   <Button buttonText="Sign Out" style={{width:"120px"}} onClick={sign_Out} />
-  
+ 
+  <Link to={'/professionaldashboard'}> <Button buttonText="Professional Dashboard" style={{width:"220px"}}/></Link>
 
       {/* <SearchBar></SearchBar>
        making popup for post request here
