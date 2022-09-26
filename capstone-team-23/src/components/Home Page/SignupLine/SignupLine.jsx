@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 export default function SignupLine() {
     
     const dispatch = useDispatch();
-
+    
     function selectionChanged(e) {
       console.log(e.target.value)
       if(e.target.value === 'customer') {
@@ -40,7 +40,7 @@ export default function SignupLine() {
         
       </select>
 
-       <Link to="/signUp"><button style={buttonStyle}>Signup</button></Link>
+       <Link to={"/signUp"}><button style={buttonStyle}>Signup</button></Link>
       
       </span>
     </div>

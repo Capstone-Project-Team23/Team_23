@@ -51,7 +51,7 @@ const triggerText = 'Open form';
   };
 return (
   <div className='container-fluid'>CustomerDashboard
-      <Navbar name1="Contact Us" name2="About Us" route1="/contactus" route2="/about"/>
+      <Navbar name1="Contact Us" name2="About Us" route1="/contactus" route2="/about" profileShow={true} />
      <img src={Wave} className="wave" />
 <div className="dash-container container">
   <Button buttonText="Sign Out" style={{width:"120px"}} onClick={sign_Out} />
