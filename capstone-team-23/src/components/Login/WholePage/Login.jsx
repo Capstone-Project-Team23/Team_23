@@ -3,12 +3,16 @@ import InputField from '../../Reusable Components/InputFields/InputField'
 import Label from '../../Reusable Components/Label/Label'
 import Navbar from '../../Reusable Components/Navbar/Navbar'
 import ShadowRect from '../../Reusable Components/ShadowRectContainer/ShadowRect'
-import Button from '../../Reusable Components/Buttons/Button'
+import Buttonn from '../../Reusable Components/Buttons/Button'
 import Header from '../../Reusable Components/Header/Header'
 import GoogleButton from '../../Sign Up Page/GoogleLink/GoogleButton'
 import image from './css/Vector.svg'
 import ellipse from './css/Ellipse 5.svg'
 import './css/WholePage.css'
+import { Form, Button } from 'semantic-ui-react';
+import { useForm } from "react-hook-form";
+import {style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle,styleInvalid} from '../../Sign Up Page/WholePage/css/style'
+
 function Login(props) {
   
   const styleWindows = {
@@ -48,24 +52,73 @@ function Login(props) {
   
     
   }
-  const html = [
-    <Header text={"Login "} style={styleHeader} />,
-    <br></br>,
+  // const html = [
+  //   <Header text={"Login "} style={styleHeader} />,
+  //   <br></br>,
     
  
-    <Label  style={labelStyle}  name="Email" />,
-    <InputField placeholder="John@gmail.com" width="250px"/>,
-    <br></br>,
-    <Label   style={labelStyle}  name="Password" />,
-    <InputField placeholder="********" type="password"width="250px" />,
-    <br></br>,
+  //   <Label  style={labelStyle}  name="Email" />,
+  //   <InputField placeholder="John@gmail.com" width="250px"/>,
+  //   <br></br>,
+  //   <Label   style={labelStyle}  name="Password" />,
+  //   <InputField placeholder="********" type="password"width="250px" />,
+  //   <br></br>,
 
-    <Button buttonText="Login" width="250px" style={{
-      width:"250px"
-    }} />,
-    <Header text="Don't have an account?" style={styleFooter}/>,
-    <a  href="#"><Header text="Sign Up" style={styleLogin}/></a>,
+  //   <Button buttonText="Login" width="250px" style={{
+  //     width:"250px"
+  //   }} />,
+    // <Header text="Don't have an account?" style={styleFooter}/>,
+    // <a  href="#"><Header text="Sign Up" style={styleLogin}/></a>,
+    // <a  href="#"><GoogleButton style={styleGoogle} /></a>
+  // ]
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+}
+  const html = [
+    <div>
+    <Form onSubmit={handleSubmit(onSubmit)}>
+       <Form.Field>
+        <Label  style={labelStyle}  name="Email" />
+            <input
+                placeholder='Email'
+                type="email"
+                className="inputField"
+                style={{width: "250px"}}
+                {...register("email",
+                    {
+                        required: true,
+                        pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    })}
+            />
+        </Form.Field>
+        {errors.email && <p style={styleInvalid}>*Please Enter Valid Email</p>}
+        <Form.Field>
+        <Label   style={labelStyle}  name="Password" />
+        <input
+                  placeholder='Password'
+                  type="password"
+                  className="inputField"
+                  style={{width: "250px"}}
+                  {...register("password", {
+                      required: true
+                  })}
+              />
+        </Form.Field>
+        {errors.password && <p style={styleInvalid}>*Please enter Password</p>}
+          <br></br>
+        <br></br>
+        <Buttonn buttonText="Sign Up" width="250px" style={{
+        width:"250px"
+        }} />
+    </Form>
+
+    <Header text="Don't have an account?" style={styleFooter}/>
+    <a  href="#"><Header text="Sign Up" style={styleLogin}/></a>
     <a  href="#"><GoogleButton style={styleGoogle} /></a>
+</div>
+
+
   ]
 
   return (
