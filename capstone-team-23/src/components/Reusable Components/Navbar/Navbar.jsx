@@ -2,7 +2,7 @@ import React from 'react'
 import CompanyLogo from '../CompanyLogo/CompanyLogo'
 import Button from '../Buttons/Button'
 import { Link } from 'react-router-dom';
-
+import faceit from './man.png'
 
 function Navbar(props) {
   const style = {
@@ -25,6 +25,9 @@ function Navbar(props) {
       </li>
       <li className="nav-item">
         <Link className="nav-link" to={props.route2}><Button buttonText={props.name2}  style={style}/></Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to={'ProfilePage'}>{props.profileShow ? <img src={faceit} style={{height:'3rem', width:'3rem'}} alt="" /> : ''}</Link>
       </li>
     </ul>
   </div>
