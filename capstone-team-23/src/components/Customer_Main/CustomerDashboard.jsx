@@ -44,8 +44,16 @@ return (
      <img src={Wave} className="wave" />
 <div className="dash-container container">
   <Button buttonText="Sign Out" style={{width:"120px"}} onClick={sign_Out} />
+ 
+  <Link to={'/professionaldashboard'}> <Button buttonText="Professional Dashboard" style={{width:"220px"}}/></Link>
 
-      <SearchBar></SearchBar>
+      {/* <SearchBar></SearchBar>
+       making popup for post request here
+      */}
+          <Container triggerText={triggerText} onSubmit={onSubmit} /> 
+
+
+
       
    
       <Header text="Make work Easier with FixItNow" style={{marginTop:"3rem"}} /> 
