@@ -62,19 +62,8 @@ return (
       {/* <SearchBar></SearchBar>
        making popup for post request here
       */}
-<<<<<<< HEAD
-          <Container triggerText={triggerText} onSubmit={onSubmit} /> 
 
-
-
-      
-   
-=======
           <Container triggerText={triggerText} onSubmit={onSubmit} />
-
-
-
->>>>>>> af44520b42ab471062a84e495c3cb0c038e9f99b
       <Header text="Make work Easier with FixItNow" style={{marginTop:"3rem"}} /> 
     <div className="d-flex flex-row flex-wrap justify-content-center card-container" >
       {arrOfServices.map( serv => (
