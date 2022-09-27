@@ -6,7 +6,7 @@ function Button(props) {
       textAlign:"Center"
   }}>
   
-    <button  className='login btn' style={props.style} onClick={props.onClick}>
+    <button  className='login btn' style={props.style} onClick={props.onClick} disabled={props.disabled}>
         {/* <span className="" >{props.buttonText}</span> */}
         <Header text={props.buttonText} style={{fontSize:"1rem"}} />
     </button>
