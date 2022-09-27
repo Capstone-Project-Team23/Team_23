@@ -16,9 +16,9 @@ import firebaseConfig from '../../../firebase/firebase'
 import { Link, Route, useNavigate  } from 'react-router-dom'
 import CustomerDashboard from '../../Customer_Main/CustomerDashboard'
 import {style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle} from './css/style.js'
-
-
-
+import { useDispatch } from "react-redux"
+import db from '../../../firebase/firestore'
+import { doc, onSnapshot, collection, query, where,addDoc, getDocs,setDoc } from "firebase/firestore";
 
 
 function SignUpPage(props) {
@@ -27,6 +27,7 @@ function SignUpPage(props) {
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
   const [isUserSignedIn, setIsUserSignedIn] = useState(true)
+  const dispatch = useDispatch();
   const navigate = useNavigate ()
   const handleGoogleSignIn = () => {
     if(!isUserSignedIn) {
@@ -34,18 +35,27 @@ function SignUpPage(props) {
       .then(result => {
         //console.log(result)
         const user = result.user
+        console.log(user)
+        console.log("This is the one"+user.uid)
+        const pushingObject = {
+          uid:user.uid
+        }
+       // const docRef = addDoc(collection(db, 'CustomerProfiles', 'Deep'), pushingObject )
+        const docRef2 = setDoc(doc(db, "CustomerProfiles", user.uid),pushingObject,{ merge: true });
       }).catch((error) => {
         console.log(error)
       })
     } 
+
+   
+
+
   }
   onAuthStateChanged( auth ,(user) => {
     if(user) {
-      console.log(user)
+      console.log(user.uid)
       return setIsUserSignedIn(true)     
-      
     }
-
     setIsUserSignedIn(false)
   })
  // console.log(isUserSignedIn)
@@ -56,7 +66,7 @@ function SignUpPage(props) {
   // authentication logic ends
 
   const selection = useSelector(state => state.selection)
-
+  const UID  = useSelector(state => state.UIDStored)
   const html = [
     <Header text={"Sign Up as " + selection} style={styleHeader} />,
     <br></br>,

@@ -1,5 +1,9 @@
 import React from 'react'
 import './ProfilePage.css'
+import { doc, onSnapshot, collection, query, where,addDoc, getDocs,setDoc, getDoc } from "firebase/firestore";
+import db from '../../firebase/firestore'
+import Navbar from '../Reusable Components/Navbar/Navbar';
+import { getAuth } from "firebase/auth";
 import {
   MDBCol,
   MDBContainer,
@@ -13,16 +17,55 @@ import {
 } from 'mdb-react-ui-kit';
 import Button from '../Reusable Components/Buttons/Button';
 import Header from '../Reusable Components/Header/Header';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function ProfilePage() {
 
-    const [disabled, setDisabled] = useState(true)
-    const [name, setName] = useState("John Smith")
-    const [mobile, setMobile] = useState("905-456(2902)")
-    const [email, setEmail] = useState("mail@example.com")
-    const [address, setAddress] = useState("Bay Area, San Francisco, CA")
 
+ 
+
+  const auth = getAuth();
+    const [disabled, setDisabled] = useState(true)
+    const [name, setName] = useState("")
+    const [mobile, setMobile] = useState("")
+    const [email, setEmail] = useState(auth.currentUser.email)
+    const [address, setAddress] = useState("")
+    
+    console.log(auth)
+
+    //getting all the data from the database all the customer profiles
+ useEffect(async function getAllData() {
+  // const querySnapshot = await getDocs(collection(db, 'CustomerProfiles'));
+  // querySnapshot.forEach((doc) => {
+  //     console.log(doc.data())
+  //     setName(doc.data().name)
+  //     setEmail(doc.data().email)
+  //     setAddress(doc.data().address)
+  //     setMobile(doc.data().mobile)
+  // })
+
+  const docRef = doc(db, "CustomerProfiles", auth.currentUser.uid);
+  const docSnap = await getDoc(docRef);
+  console.log(docSnap.data())
+     if(docSnap.data().name === undefined) {
+      setName("")
+     }else {
+      setName(docSnap.data().name)
+     }
+     if(docSnap.data().address === undefined) {
+      setAddress("")
+     }else {
+      setAddress(docSnap.data().address)
+     }
+     if(docSnap.data().mobile === undefined) {
+      setMobile("")
+     }else {
+      setMobile(docSnap.data().mobile)
+     }
+      
+
+ 
+},  [])
     const style = {
         padding:"8px",
         width:"110px",
@@ -46,13 +89,16 @@ export default function ProfilePage() {
     }
     const handleSaveClick = (e) => {
         const pushObj = {
-            name,email,mobile,address
+            name,email:auth.currentUser.email,mobile,address
         }
+        const uid = auth.currentUser.uid
+        const docRef2 = setDoc(doc(db, "CustomerProfiles", uid ),pushObj, { merge: true });
         console.log(pushObj)
     }
   return (
     <section>
-      <MDBContainer className="py-5">
+        <Navbar name1="Dashboard" name2="Logout" route1="/customerdashboard" route2="/" profileShow={false} />
+      <MDBContainer className="py-5 whole-container">
         {/* <MDBRow>
           <MDBCol>
             <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
@@ -112,7 +158,7 @@ export default function ProfilePage() {
                   </MDBCol>
                   <MDBCol sm="9">
                   {/* <Header text="mail@example.com" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header> */}
-                  <MDBInput id='form1' type='text' value={email} disabled={disabled} onChange={handleEmailEdit}/>
+                  <MDBInput id='form1' type='text' value={email} disabled={true} onChange={handleEmailEdit}/>
                   </MDBCol>
                 </MDBRow>
                 <hr />

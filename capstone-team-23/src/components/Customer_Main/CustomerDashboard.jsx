@@ -11,9 +11,9 @@ import Button from '../Reusable Components/Buttons/Button';
 import Header from '../Reusable Components/Header/Header';
 import Wave from './Images/wave.svg'
 import Container from './Popup/Container';
-
+import { doc, onSnapshot, collection, query, where,addDoc, getDocs,setDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom';
-
+import db from '../../firebase/firestore'
 function CustomerDashboard() {
  
  const arrOfServices = [
@@ -29,7 +29,7 @@ function CustomerDashboard() {
    {Name : "Welding",Path:"https://images.unsplash.com/photo-1608126841548-dfad1d420a0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdlbGRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"},
    {Name : "Window Cleaning",Path:"https://images.unsplash.com/photo-1534350752840-1b1b71b4b4fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2luZG93JTIwY2xlYW5pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"},
   ] 
-  
+  const auth = getAuth();
 const navigate = useNavigate()
 initializeAuthentication();
 const sign_Out = () => {
@@ -42,6 +42,13 @@ const sign_Out = () => {
       
     });
 } 
+
+// useEffect(function() {
+//   const pushingObject = {
+//     uid:auth.currentUser.uid
+//   }
+//   const docRef = addDoc(collection(db, 'CustomerProfiles'), pushingObject )
+// }, [])
 
 //onsubmit for popup button
 const triggerText = 'Open form';
