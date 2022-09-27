@@ -9,18 +9,19 @@ import {
   MDBCardBody,
   MDBCardImage,
   MDBBtn,
-  MDBBreadcrumb,
-  MDBBreadcrumbItem,
-  MDBProgress,
-  MDBProgressBar,
-  MDBIcon,
-  MDBListGroup,
-  MDBListGroupItem
+   MDBInput
 } from 'mdb-react-ui-kit';
 import Button from '../Reusable Components/Buttons/Button';
 import Header from '../Reusable Components/Header/Header';
+import { useState } from 'react';
 
 export default function ProfilePage() {
+
+    const [disabled, setDisabled] = useState(true)
+    const [name, setName] = useState("John Smith")
+    const [mobile, setMobile] = useState("905-456(2902)")
+    const [email, setEmail] = useState("mail@example.com")
+    const [address, setAddress] = useState("Bay Area, San Francisco, CA")
 
     const style = {
         padding:"8px",
@@ -28,6 +29,27 @@ export default function ProfilePage() {
         color: "rgba(29, 33, 78, 1)"
       }
 
+    const handleEditClick = () => {
+        setDisabled(false)
+    }
+    const handleNameEdit = (e) => {
+        setName(e.target.value)
+    }
+    const handleEmailEdit = (e) => {
+        setEmail(e.target.value)
+    }
+    const handlePhoneEdit = (e) => {
+        setMobile(e.target.value)
+    }
+    const handleAddressEdit = (e) => {
+        setAddress(e.target.value)
+    }
+    const handleSaveClick = (e) => {
+        const pushObj = {
+            name,email,mobile,address
+        }
+        console.log(pushObj)
+    }
   return (
     <section>
       <MDBContainer className="py-5">
@@ -55,11 +77,11 @@ export default function ProfilePage() {
                   className="rounded-circle"
                   style={{ width: '150px' }}
                   fluid />
-                <p className="text-muted mb-1">Full Stack Developer</p>
+                <p className="text-muted mb-1">Customer Profile</p>
                 <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
                 <div className="d-flex justify-content-center mb-2">
-                 <Button buttonText="Follow" style={style}><MDBBtn className='Followbtn'></MDBBtn> </Button> 
-                 <Button buttonText="Message" style={style}> <MDBBtn outline className="ms-1">Message</MDBBtn></Button> 
+                 <Button buttonText="Edit"  style={style} onClick={handleEditClick}  ><MDBBtn className='Followbtn'></MDBBtn> </Button> 
+                 <Button buttonText="Save" disabled={disabled} style={style} onClick={handleSaveClick}> <MDBBtn outline className="ms-1"></MDBBtn></Button> 
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -78,7 +100,9 @@ export default function ProfilePage() {
                  <Header text="Full Name">   <MDBCardText></MDBCardText> </Header>
                   </MDBCol>
                   <MDBCol sm="9">
-                  <Header text="John Smith" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header>
+                     {/*This is form input trying and testing*/}
+                  {/* <Header text="John Smith" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header> */}
+                  <MDBInput id='form1' type='text' value={name} disabled={disabled} onChange={handleNameEdit}/>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -87,7 +111,8 @@ export default function ProfilePage() {
                   <Header text="Email">   <MDBCardText></MDBCardText> </Header>
                   </MDBCol>
                   <MDBCol sm="9">
-                  <Header text="mail@example.com" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header>
+                  {/* <Header text="mail@example.com" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header> */}
+                  <MDBInput id='form1' type='text' value={email} disabled={disabled} onChange={handleEmailEdit}/>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -96,25 +121,20 @@ export default function ProfilePage() {
                   <Header text="Phone">   <MDBCardText></MDBCardText> </Header>
                   </MDBCol>
                   <MDBCol sm="9">
-                  <Header text="(097) 234-5678" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header>
+                  {/* <Header text="(097) 234-5678" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header> */}
+                  <MDBInput id='form1' type='text' value={mobile} disabled={disabled} onChange={handlePhoneEdit}/>
                   </MDBCol>
                 </MDBRow>
                 <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                  <Header text="Mobile">   <MDBCardText></MDBCardText> </Header>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                  <Header text="(097) 234-5678" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header>
-                  </MDBCol>
-                </MDBRow>
+              
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
                   <Header text="Address">   <MDBCardText></MDBCardText> </Header>
                   </MDBCol>
                   <MDBCol sm="9">
-                  <Header text="Bay Area, San Francisco, CA" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header>
+                  {/* <Header text="Bay Area, San Francisco, CA" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header> */}
+                  <MDBInput id='form1' type='text' value={address} disabled={disabled} onChange={handleAddressEdit}/>
                   </MDBCol>
                 </MDBRow>
               </MDBCardBody>
