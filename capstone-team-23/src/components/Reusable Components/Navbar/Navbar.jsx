@@ -2,7 +2,7 @@ import React from 'react'
 import CompanyLogo from '../CompanyLogo/CompanyLogo'
 import Button from '../Buttons/Button'
 import { Link } from 'react-router-dom';
-
+import faceit from './man.png'
 
 function Navbar(props) {
   const style = {
@@ -10,6 +10,15 @@ function Navbar(props) {
     width:"150px",
     color: "rgba(29, 33, 78, 1)"
   }
+
+  var button;
+
+  if (props.show =="true") {
+    button = <li className="nav-item">
+    <Link className="nav-link" to={props.route3}><Button buttonText={props.name3} style={style} /></Link>
+  </li>;
+  } 
+
   return (
     <div className='container-custom' >
       
@@ -20,11 +29,15 @@ function Navbar(props) {
   </button>
   <div className="collapse navbar-collapse justify-content-end px-5 " id="navbarNav">
     <ul className="navbar-nav px-5 ">
+    {button}
       <li className="nav-item">
         <Link className="nav-link" to={props.route1}><Button buttonText={props.name1} style={style} /></Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link" to={props.route2}><Button buttonText={props.name2}  style={style}/></Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to={'/ProfilePage'}>{props.profileShow ? <img src={faceit} style={{height:'3rem', width:'3rem'}} alt="" /> : ''}</Link>
       </li>
     </ul>
   </div>

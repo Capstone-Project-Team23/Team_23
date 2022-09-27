@@ -4,14 +4,14 @@
   font-family: Poppins, sans-serif;
   font-weight: 700;
   line-height: 105%;
-  color: #1d214e;
+  color: rgb(29, 33, 78);
   width: 20rem;
   word-wrap: break-word;
   font-weight: bold;
 }
 
 .slogan-green {
-  color: #04d7a2;
+  color: rgb(4, 215, 162);
 }
 
 @media (min-width: 1025px) {

@@ -1,1 +1,1 @@
-{"version":3,"sources":["CompanyLogo.scss","CompanyLogo.css"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,UAAA;ACCJ;;ADCA;EACI,eAAA;EACA,mCAAA;EACA,gBAAA;EACA,cAAA;EACA,qBAAA;ACEJ;;ADCE;EACE,cAAA;ACEJ","file":"CompanyLogo.css"}
+{"version":3,"sources":["CompanyLogo.scss","CompanyLogo.css"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,UAAA;ACCJ;;ADCA;EACI,eAAA;EACA,mCAAA;EACA,gBAAA;EACA,sBAAA;EACA,qBAAA;ACEJ;;ADCE;EACE,uBAAA;ACEJ","file":"CompanyLogo.css"}
