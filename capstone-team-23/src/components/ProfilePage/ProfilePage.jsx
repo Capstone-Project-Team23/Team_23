@@ -18,6 +18,7 @@ import {
 import Button from '../Reusable Components/Buttons/Button';
 import Header from '../Reusable Components/Header/Header';
 import { useState, useEffect } from 'react';
+import Notification from '../Notification/Notification';
 
 export default function ProfilePage() {
 
@@ -97,7 +98,8 @@ export default function ProfilePage() {
     }
   return (
     <section>
-        <Navbar name1="Dashboard" name2="Logout" route1="/customerdashboard" route2="/" profileShow={false} />
+        {/* <Navbar name1="Dashboard" name2="Logout" route1="/customerdashboard" route2="/" profileShow={false} /> */}
+        <Notification />
       <MDBContainer className="py-5 whole-container">
         {/* <MDBRow>
           <MDBCol>

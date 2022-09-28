@@ -19,6 +19,9 @@ import initializeAuthentication from '../firebase/firebase-init'
 import {GoogleAuthProvider ,getAuth, signInWithPopup , onAuthStateChanged} from 'firebase/auth'
 import { Not_Authenticated, Yes_Authenticated } from '../redux/actions/AuthenticatedAction.js';
 import ProfilePage from './ProfilePage/ProfilePage.jsx';
+import { ToastContainer, toast } from 'react-toastify';
+import Notification from './Notification/Notification.jsx';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   
   initializeAuthentication();
@@ -40,7 +43,7 @@ function App() {
 
 
   return (
-
+<>
     <Router><div>
        <Routes>
        <Route path="" element={loginStatus ? <CustomerDashboard /> : <Homepage/> } />
@@ -48,6 +51,7 @@ function App() {
        <Route path="/about" exact element={<AboutUsWholePage/>} />
        <Route path="/signUp" element={<SignUpPage/>} />
        <Route path="/contactUs" element={<ContactUS/>} />
+       <Route path="/notification" element={<Notification/>} />
        <Route path="/ProfilePage" element={<ProfilePage/>} />
 
     {/* 
@@ -64,6 +68,9 @@ function App() {
        <Route exact path="/filterService" element={<FilterService/>} />
        </Routes>
       </div></Router>
+
+      <ToastContainer position="top-right" autoClose={2000}  />
+      </>
 
   )
 
