@@ -93,13 +93,16 @@ export default function ProfilePage() {
             name,email:auth.currentUser.email,mobile,address
         }
         const uid = auth.currentUser.uid
-        const docRef2 = setDoc(doc(db, "CustomerProfiles", uid ),pushObj, { merge: true });
+        const docRef =  setDoc(doc(db, "CustomerProfiles", uid ),pushObj, { merge: true });
+        console.log( docRef)
         console.log(pushObj)
+        alert("data is saved")
+        setDisabled(true)
     }
   return (
     <section>
         {/* <Navbar name1="Dashboard" name2="Logout" route1="/customerdashboard" route2="/" profileShow={false} /> */}
-        <Notification />
+        {/* <Notification /> */}
       <MDBContainer className="py-5 whole-container">
         {/* <MDBRow>
           <MDBCol>

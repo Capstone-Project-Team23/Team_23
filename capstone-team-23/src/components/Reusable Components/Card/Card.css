@@ -1,0 +1,7 @@
+.card-con {
+  transition: all 0.1s;
+}
+
+.card-con:hover {
+  scale: 1.05;
+}/*# sourceMappingURL=Card.css.map */

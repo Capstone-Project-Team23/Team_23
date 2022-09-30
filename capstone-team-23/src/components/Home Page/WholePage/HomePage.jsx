@@ -13,6 +13,7 @@ import './HomePage.css'
 import circle from '../SignupLine/circle.svg'
 import Man1 from './Man1.svg'
 import Man2 from './Man2.svg'
+import Vector from './Vector.svg'
 import Wave from './wave.svg'
 import {useState} from 'react'
 import AboutUsWholePage from '../../AboutUs/AboutUsWholePage/AboutUsWholePage';
@@ -41,7 +42,7 @@ function HomePage() {
        
        </div>
       </div>
-    
+      <img className='img homeimg' src={Vector} alt="" />    
       </div>
       
   )

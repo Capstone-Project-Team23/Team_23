@@ -31,6 +31,10 @@ body {
   background: #555;
 }
 
+.homeimg {
+  top: 30rem;
+}
+
 .img {
   width: 103%;
   position: fixed;
