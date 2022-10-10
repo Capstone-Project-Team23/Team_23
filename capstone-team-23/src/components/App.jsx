@@ -18,10 +18,14 @@ import { useDispatch, useSelector } from "react-redux"
 import initializeAuthentication from '../firebase/firebase-init'
 import {GoogleAuthProvider ,getAuth, signInWithPopup , onAuthStateChanged} from 'firebase/auth'
 import { Not_Authenticated, Yes_Authenticated } from '../redux/actions/AuthenticatedAction.js';
+<<<<<<< HEAD
 import ProfilePage from './ProfilePage/ProfilePage.jsx';
 import { ToastContainer, toast } from 'react-toastify';
 import Notification from './Notification/Notification.jsx';
 import 'react-toastify/dist/ReactToastify.css';
+=======
+import SignUpProfessional from './SignUpProfessional/WholePage/SignUpProfessional.jsx';
+>>>>>>> NewRouting
 function App() {
   
   initializeAuthentication();
@@ -51,8 +55,12 @@ function App() {
        <Route path="/about" exact element={<AboutUsWholePage/>} />
        <Route path="/signUp" element={<SignUpPage/>} />
        <Route path="/contactUs" element={<ContactUS/>} />
+<<<<<<< HEAD
        <Route path="/notification" element={<Notification/>} />
        <Route path="/ProfilePage" element={<ProfilePage/>} />
+=======
+       <Route path="/signUpProfessional" element={<SignUpProfessional/>} />
+>>>>>>> NewRouting
 
     {/* 
     Testing the professional Side of the App, routing

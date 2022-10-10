@@ -8,14 +8,18 @@ import { Link } from "react-router-dom"
 export default function SignupLine() {
     
     const dispatch = useDispatch();
-    
+
+    const [route, setRoute] = useState('signUp')
+
     function selectionChanged(e) {
       console.log(e.target.value)
       if(e.target.value === 'customer') {
         dispatch(customer())
+        setRoute('signUp')
       }
       if(e.target.value === 'professional') {
         dispatch(professional());
+        setRoute('signUpProfessional')
       }
     }
     
@@ -40,7 +44,11 @@ export default function SignupLine() {
         
       </select>
 
-       <Link to={"/signUp"}><button style={buttonStyle}>Signup</button></Link>
+{
+  console.log(route)
+}
+       <Link to={'/'+route}><button style={buttonStyle}>Signup</button></Link>
+
       
       </span>
     </div>
