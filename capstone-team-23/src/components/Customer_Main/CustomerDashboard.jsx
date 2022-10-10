@@ -11,12 +11,12 @@ import Button from '../Reusable Components/Buttons/Button';
 import Header from '../Reusable Components/Header/Header';
 import Wave from './Images/wave.svg'
 import Container from './Popup/Container';
-import { doc, onSnapshot, collection, query, where, addDoc, getDocs, setDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom';
 import db from '../../firebase/firestore'
 import Notification from '..//Notification/Notification';
 import { toast } from 'react-toast'
-
+import { doc, onSnapshot, collection, query, where,addDoc, getDocs,setDoc, getDoc } from "firebase/firestore";
+import { useState } from 'react';
 
 function CustomerDashboard() {
 
@@ -46,6 +46,52 @@ function CustomerDashboard() {
 
     });
   }
+  const [disabled, setDisabled] = useState(true)
+  const [name, setName] = useState("")
+  const [mobile, setMobile] = useState("")
+  const [email, setEmail] = useState(auth.currentUser.email)
+  const [address, setAddress] = useState("")
+ const [complete, setComplete] = useState(false);
+  //getting details of the customer to show the notifications
+     //getting all the data from the database all the customer profiles
+ useEffect(async function getAllData() {
+  // const querySnapshot = await getDocs(collection(db, 'CustomerProfiles'));
+  // querySnapshot.forEach((doc) => {
+  //     console.log(doc.data())
+  //     setName(doc.data().name)
+  //     setEmail(doc.data().email)
+  //     setAddress(doc.data().address)
+  //     setMobile(doc.data().mobile)
+  // })
+
+  const docRef = doc(db, "CustomerProfiles", auth.currentUser.uid);
+  const docSnap = await getDoc(docRef);
+  console.log(docSnap.data())
+     if(docSnap.data().name === undefined) {
+      setName("")
+     }else {
+      setName(docSnap.data().name)
+      console.log("This is the name "+name)
+     }
+     if(docSnap.data().email === undefined) {
+      setEmail("")
+     }else {
+      setEmail(docSnap.data().email)
+     }
+     if(docSnap.data().address === undefined) {
+      setAddress("")
+     }else {
+      setAddress(docSnap.data().address)
+     }
+     if(docSnap.data().mobile === undefined) {
+      setMobile("")
+     }else {
+      setMobile(docSnap.data().mobile)
+     }
+
+ 
+
+},  [])
   //onsubmit for popup button
   const triggerText = 'Open form';
   const onSubmit = (event) => {
@@ -55,7 +101,7 @@ function CustomerDashboard() {
   };
   return (
     <div className='container-fluid'>CustomerDashboard
-      <Navbar name1="Contact Us" name2="About Us" route1="/contactus" route2="/about" profileShow={true} />
+      <Navbar name1="Contact Us" name2="About Us" route1="/contactus" route2="/about" route3="/ProfilePage" profileShow={true} />
       <img src={Wave} className="wave" />
       
       <div className="dash-container container">
@@ -71,7 +117,9 @@ function CustomerDashboard() {
           ))}
         </div>
       </div>
-      {<Notification text={"Please complete your profile"} />}
+        { 
+       complete ? <Notification text={"Please complete your profile"}  /> : ""
+        }
     </div>
   )
 }

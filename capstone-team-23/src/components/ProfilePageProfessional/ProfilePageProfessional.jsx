@@ -20,17 +20,15 @@ import Header from '../Reusable Components/Header/Header';
 import { useState, useEffect } from 'react';
 import Notification from '../Notification/Notification';
 
-export default function ProfilePage() {
-
-
- 
-
+export default function ProfilePageProfessional() {
   const auth = getAuth();
     const [disabled, setDisabled] = useState(true)
     const [name, setName] = useState("")
     const [mobile, setMobile] = useState("")
     const [email, setEmail] = useState(auth.currentUser.email)
     const [address, setAddress] = useState("")
+    const [experience, setExperience] = useState("")
+    const [services, setServices] = useState("")
     
     console.log(auth)
 
@@ -45,7 +43,7 @@ export default function ProfilePage() {
   //     setMobile(doc.data().mobile)
   // })
 
-  const docRef = doc(db, "CustomerProfiles", auth.currentUser.uid);
+  const docRef = doc(db, "ProfessionalProfiles", auth.currentUser.uid);
   const docSnap = await getDoc(docRef);
   console.log(docSnap.data())
      if(docSnap.data().name === undefined) {
@@ -63,7 +61,16 @@ export default function ProfilePage() {
      }else {
       setMobile(docSnap.data().mobile)
      }
-      
+     if(docSnap.data().experience === undefined) {
+      setExperience("")
+     }else {
+      setExperience(docSnap.data().experience)
+     }
+     if(docSnap.data().services === undefined) {
+      setServices("")
+     }else {
+      setServices(docSnap.data().services)
+     } 
 
  
 },  [])
@@ -88,12 +95,18 @@ export default function ProfilePage() {
     const handleAddressEdit = (e) => {
         setAddress(e.target.value)
     }
+    const handleExperienceEdit = (e) => {
+      setExperience(e.target.value)
+  }
+  const handleServicesEdit = (e) => {
+    setServices(e.target.value)
+}
     const handleSaveClick = (e) => {
         const pushObj = {
-            name,email:auth.currentUser.email,mobile,address
+            name,email:auth.currentUser.email,mobile,address,experience,services
         }
         const uid = auth.currentUser.uid
-        const docRef =  setDoc(doc(db, "CustomerProfiles", uid ),pushObj, { merge: true });
+        const docRef =  setDoc(doc(db, "ProfessionalProfiles", uid ),pushObj, { merge: true });
         console.log( docRef)
         console.log(pushObj)
         alert("data is saved")
@@ -101,7 +114,7 @@ export default function ProfilePage() {
     }
   return (
     <section>
-        <Navbar name1="Dashboard" name2="Logout" route1="/customerdashboard" route2="/" profileShow={false} />
+        <Navbar name1="Dashboard" name2="Logout" route1="/ProfessionalDashboard" route2="/" profileShow={false} />
         {/* <Notification /> */}
       <MDBContainer className="py-5 whole-container">
         {/* <MDBRow>
@@ -186,6 +199,24 @@ export default function ProfilePage() {
                   <MDBCol sm="9">
                   {/* <Header text="Bay Area, San Francisco, CA" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header> */}
                   <MDBInput id='form1' type='text' value={address} disabled={disabled} onChange={handleAddressEdit}/>
+                  </MDBCol>
+                </MDBRow>
+                <MDBRow>
+                  <MDBCol sm="3">
+                  <Header text="Experience in years ">   <MDBCardText></MDBCardText> </Header>
+                  </MDBCol>
+                  <MDBCol sm="9">
+                  {/* <Header text="Bay Area, San Francisco, CA" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header> */}
+                  <MDBInput id='form1' type='text' value={experience} disabled={disabled} onChange={handleExperienceEdit}/>
+                  </MDBCol>
+                </MDBRow>
+                <MDBRow>
+                  <MDBCol sm="3">
+                  <Header text="Provided Services">   <MDBCardText></MDBCardText> </Header>
+                  </MDBCol>
+                  <MDBCol sm="9">
+                  {/* <Header text="Bay Area, San Francisco, CA" style={{fontWeight:'100'}}>   <MDBCardText></MDBCardText> </Header> */}
+                  <MDBInput id='form1' type='text' value={services} disabled={disabled} onChange={handleServicesEdit}/>
                   </MDBCol>
                 </MDBRow>
               </MDBCardBody>

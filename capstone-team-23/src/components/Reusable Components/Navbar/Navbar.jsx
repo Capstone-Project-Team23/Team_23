@@ -3,13 +3,14 @@ import CompanyLogo from '../CompanyLogo/CompanyLogo'
 import Button from '../Buttons/Button'
 import { Link } from 'react-router-dom';
 import faceit from './man.png'
-
+import { useSelector } from 'react-redux';
 function Navbar(props) {
   const style = {
     padding:"8px",
     width:"150px",
     color: "rgba(29, 33, 78, 1)"
   }
+  let selection = useSelector(state => state.selection)
   return (
     <div className='container-custom' >
       
@@ -27,7 +28,7 @@ function Navbar(props) {
         <Link className="nav-link" to={props.route2}><Button buttonText={props.name2}  style={style}/></Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to={'/ProfilePage'}>{props.profileShow ? <img src={faceit} style={{height:'3rem', width:'3rem'}} alt="" /> : ''}</Link>
+        <Link className="nav-link" to={selection=="Customer" ? '/ProfilePage' : "/ProfilePageProfessional"}>{props.profileShow ? <img src={faceit} style={{height:'3rem', width:'3rem'}} alt="" /> : ''}</Link>
       </li>
     </ul>
   </div>

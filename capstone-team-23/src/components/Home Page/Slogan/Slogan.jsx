@@ -1,6 +1,7 @@
 import React from "react"
 import "./Slogan.css"
 import {useState, useEffect} from 'react'
+import { useSelector } from "react-redux";
 export default function Slogan() {
   const placeholderText = ["one", "two", "three"];
   const arrOfServices = [
@@ -25,7 +26,7 @@ export default function Slogan() {
   ]
 
 
-
+  let selection = useSelector(state => state.selection)
     const [index, setIndex] = useState(0);
    
     useEffect(() => {
@@ -51,8 +52,8 @@ export default function Slogan() {
 
   return (
     <p className="slogan-blue">
-      Get <span className="slogan-green">{arrOfServices2[index].Name}</span> Service at your finger{" "}
-      tips
+      { selection=="Customer" ? "Get" : "Provide"} <span className="slogan-green">{arrOfServices2[index].Name}</span> Services {selection=="Customer" ? "at your finger tips" : ""} {" "}
+      
     </p>
   )
 }

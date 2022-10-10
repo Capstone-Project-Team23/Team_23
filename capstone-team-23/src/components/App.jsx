@@ -18,14 +18,14 @@ import { useDispatch, useSelector } from "react-redux"
 import initializeAuthentication from '../firebase/firebase-init'
 import {GoogleAuthProvider ,getAuth, signInWithPopup , onAuthStateChanged} from 'firebase/auth'
 import { Not_Authenticated, Yes_Authenticated } from '../redux/actions/AuthenticatedAction.js';
-<<<<<<< HEAD
+
 import ProfilePage from './ProfilePage/ProfilePage.jsx';
 import { ToastContainer, toast } from 'react-toastify';
 import Notification from './Notification/Notification.jsx';
 import 'react-toastify/dist/ReactToastify.css';
-=======
+
 import SignUpProfessional from './SignUpProfessional/WholePage/SignUpProfessional.jsx';
->>>>>>> NewRouting
+import ProfilePageProfessional from './ProfilePageProfessional/ProfilePageProfessional.jsx';
 function App() {
   
   initializeAuthentication();
@@ -50,28 +50,21 @@ function App() {
 <>
     <Router><div>
        <Routes>
-       <Route path="" element={loginStatus ? <CustomerDashboard /> : <Homepage/> } />
+       {/* <Route path="" element={loginStatus ? <CustomerDashboard /> : <Homepage/> } /> */}
+       <Route path="" element={ <Homepage/> } />
        <Route path="/" exact element={<Homepage/>} />
        <Route path="/about" exact element={<AboutUsWholePage/>} />
        <Route path="/signUp" element={<SignUpPage/>} />
        <Route path="/contactUs" element={<ContactUS/>} />
-<<<<<<< HEAD
        <Route path="/notification" element={<Notification/>} />
        <Route path="/ProfilePage" element={<ProfilePage/>} />
-=======
+        <Route path="/ProfilePageProfessional" element={<ProfilePageProfessional/>} /> 
+
        <Route path="/signUpProfessional" element={<SignUpProfessional/>} />
->>>>>>> NewRouting
 
-    {/* 
-    Testing the professional Side of the App, routing
-    */}
-     <Route path="/professionaldashboard" element={<ProfessionalDashboard />} />
-  
-
-       {/* <Route path="/dashboard" element = {(loginStatus===true && selection==="Customer") ? <CustomerDashboard /> : (loginStatus===true && selection==="Professional") ? <ProfessionalDashboard/> : <SignUpPage/> } /> */}
        <Route path="/customerdashboard" element = { loginStatus===true ? <CustomerDashboard /> : <SignUpPage/> } />
+       <Route path="/professionaldashboard" element = { loginStatus===true ? <ProfessionalDashboard /> : <SignUpPage/> } />
        <Route path="/postrequest" element = { loginStatus===true ? < PostRequestForm/> : <SignUpPage/> } />
-       {/* <Route path="/professionaldashboard" element = {(loginStatus===true && selection==="Professional") ? <ProfessionalDashboard /> : <SignUpPage/> } /> */}
        <Route path="/login" element={<Login/>} />
        <Route exact path="/filterService" element={<FilterService/>} />
        </Routes>
