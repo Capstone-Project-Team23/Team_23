@@ -4,6 +4,7 @@ import initializeAuthentication from '../../firebase/firebase-init'
 import db from '../../firebase/firestore'
 import { doc, onSnapshot, collection, query, where,addDoc, getDocs } from "firebase/firestore";
 import Card from '../Reusable Components/Card/Card';
+import Navbar from '../Reusable Components/Navbar/Navbar';
 //import {} from 'firebase/auth'
 
 function FilterService() {
@@ -33,7 +34,9 @@ useEffect(async function getAllData() {
 
   return (
     <div>
-      <div className="d-flex flex-row flex-wrap justify-content-center card-container" >
+      <div className="d-flex flex-row flex-wrap justify-content-center card-container" style={{marginTop:"5rem"}} >
+      <Navbar name1="Contact Us" name2="About Us" route1="/contactus" route2="/about" profileShow={true} />
+
       {
         filteredCards.map(m => (
           <Card service={m.Name + "-" +m.Service} ImageSrc={"https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"} />
