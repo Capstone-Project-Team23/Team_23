@@ -37,9 +37,7 @@ const styleGoogle = {
 
 const styleInvalid = {
     color: "red",
-    fontSize: "12px"
-
-
+    fontSize: "12px",
 }
 
 export { style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle, styleInvalid }

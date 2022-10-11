@@ -15,7 +15,6 @@ import {GoogleAuthProvider ,getAuth, signInWithPopup , onAuthStateChanged} from 
 import firebaseConfig from '../../../firebase/firebase'
 import { Link, Route, useNavigate  } from 'react-router-dom'
 import CustomerDashboard from '../../Customer_Main/CustomerDashboard'
-import {style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle} from './css/style.js'
 import { useDispatch } from "react-redux"
 import db from '../../../firebase/firestore'
 import { doc, onSnapshot, collection, query, where,addDoc, getDocs,setDoc } from "firebase/firestore";
@@ -166,6 +165,8 @@ export default function SignUpPage() {
 
 
     const html =[
+        <Header text={"Sign Up as " + selection} style={styleHeader} />,
+         <br></br>,
       <div>
       <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Field>
@@ -174,10 +175,11 @@ export default function SignUpPage() {
                   placeholder='First Name'
                   type="text"
                   className="inputField"
-                  style={{width: "250px"}}
+                  style={{width: "250px",marginLeft:"1rem"}}
                   {...register("firstName", { required: true, maxLength: 15 })}
               />
           </Form.Field>
+          <br></br>
           {errors.firstName && <p style={styleInvalid}>*Please Enter your First Name</p>}
           <Form.Field>
               <Label  style={labelStyle}  name="Last Name" />
@@ -185,10 +187,11 @@ export default function SignUpPage() {
                   placeholder='Last Name'
                   type="text"
                   className="inputField"
-                  style={{width: "250px"}}
+                  style={{width: "250px" ,marginLeft:"1rem"}}
                   {...register("lastName", { required: true, maxLength: 15 })}
               />
           </Form.Field>
+          <br></br>
           {errors.lastName && <p style={styleInvalid}>*Please Enter your Last Name</p>}
           <Form.Field>
           <Label  style={labelStyle}  name="Email" />
@@ -196,7 +199,7 @@ export default function SignUpPage() {
                   placeholder='Email'
                   type="email"
                   className="inputField"
-                  style={{width: "250px"}}
+                  style={{width: "250px", marginLeft:"1rem"}}
                   {...register("email",
                       {
                           required: true,
@@ -204,6 +207,7 @@ export default function SignUpPage() {
                       })}
               />
           </Form.Field>
+          <br></br>
           {errors.email && <p style={styleInvalid}>*Please Enter Valid Email</p>}
           <Form.Field>
           <Label   style={labelStyle}  name="Password" />
@@ -211,13 +215,14 @@ export default function SignUpPage() {
                   placeholder='Password'
                   type="password"
                   className="inputField"
-                  style={{width: "250px"}}
+                  style={{width: "250px",marginLeft:"1rem"}}
                   {...register("password", {
                       required: true,
                       pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
                   })}
               />
           </Form.Field>
+          <br></br>
           {errors.password && <p style={styleInvalid}>*Please check the Password</p>}
           <br></br>
           <Buttonn buttonText="Sign Up" width="250px" style={{
