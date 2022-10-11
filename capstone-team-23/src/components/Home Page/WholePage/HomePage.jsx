@@ -29,7 +29,7 @@ function HomePage() {
   return (
     <div className='container-fluid'>
 
-      <Navbar name1="About Us" name2="Login" route1="/about" route2="/login"/>
+      <Navbar name1="About Us" name2="Login" route1="/about" route2="/login" show = "true" name3="Contact Us" route3="/contactus"/>
       <div className='row row-custom  '>
         {/* <div className="col-xs-12 col-sm-12 col-lg-6 c1">
           

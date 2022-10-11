@@ -11,6 +11,16 @@ function Navbar(props) {
     color: "rgba(29, 33, 78, 1)"
   }
   let selection = useSelector(state => state.selection)
+
+
+  var button;
+
+  if (props.show =="true") {
+    button = <li className="nav-item">
+    <Link className="nav-link" to={props.route3}><Button buttonText={props.name3} style={style} /></Link>
+  </li>;
+  } 
+
   return (
     <div className='container-custom' >
       
@@ -21,6 +31,7 @@ function Navbar(props) {
   </button>
   <div className="collapse navbar-collapse justify-content-end px-5 " id="navbarNav">
     <ul className="navbar-nav px-5 ">
+    {button}
       <li className="nav-item">
         <Link className="nav-link" to={props.route1}><Button buttonText={props.name1} style={style} /></Link>
       </li>

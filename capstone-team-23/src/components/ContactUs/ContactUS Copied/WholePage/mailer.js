@@ -10,7 +10,7 @@ const emailState = {
     error: '',
     success: ''
    
-} 
+}
 
 function sendEmail(e){
     e.preventDefault();
