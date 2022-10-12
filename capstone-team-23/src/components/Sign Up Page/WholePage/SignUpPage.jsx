@@ -327,7 +327,7 @@ export default function SignUpPage() {
                       type="password"
                       className="inputField"
                       style={{width: "200px",marginLeft:"1rem"}}
-                      {...register("password", {
+                      {...register("confirmpassword", {
                           required: true,
                           pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
                       })}
