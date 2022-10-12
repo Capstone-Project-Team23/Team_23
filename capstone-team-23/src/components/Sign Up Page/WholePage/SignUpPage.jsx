@@ -346,7 +346,7 @@ export default function SignUpPage() {
           }} />
 
         <Header text="Already have account?" style={styleFooter}/>
-          <a  href="#"><Header text="Login" style={styleLogin}/></a>,
+          <a  href="#"><Header text="Login" style={styleLogin}/></a>
           
         </td>
        </tr>
