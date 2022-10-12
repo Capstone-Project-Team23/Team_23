@@ -1,6 +1,6 @@
 const styleWindows = {
-    width: "22rem",
-    height: "48rem",
+    width: "36.5rem",
+    height: "35rem",
     margin: "120px 14rem"
 }
 
@@ -12,10 +12,15 @@ const style = {
 const styleHeader = {
     fontSize: "1.5em",
     marginTop: "10px",
-    marginButton: "10px"
+    marginButton: "10px",
+    textAlign: "center"
 }
 const labelStyle = {
     marginLeft: "20px"
+}
+
+const labelStyleLogin = {
+    marginLeft: "25px"
 }
 const styleFooter = {
     margin: "auto",
@@ -35,9 +40,19 @@ const styleGoogle = {
 
 }
 
+const styleGoogleSignUp = {
+    marginTop: "30px",
+    textAlign: "Center",
+    width: "250px",
+    marginLeft: "110px"
+
+
+}
+
 const styleInvalid = {
     color: "red",
     fontSize: "12px",
+    marginLeft: "25PX"
 }
 
-export { style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle, styleInvalid }
+export { style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle, styleInvalid, labelStyleLogin, styleGoogleSignUp }
