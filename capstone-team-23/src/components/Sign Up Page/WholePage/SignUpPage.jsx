@@ -18,7 +18,7 @@ import CustomerDashboard from '../../Customer_Main/CustomerDashboard'
 import { useDispatch } from "react-redux"
 import db from '../../../firebase/firestore'
 import { doc, onSnapshot, collection, query, where,addDoc, getDocs,setDoc } from "firebase/firestore";
-import {style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle,styleInvalid} from './css/style.js'
+import {style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle,styleGoogleSignUp,styleInvalid} from './css/style.js'
 
 
 
@@ -170,7 +170,7 @@ export default function SignUpPage() {
       <div>
       <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Field>
-          <Label  style={labelStyle} name="First Name" />
+         
               <input
                   placeholder='First Name'
                   type="text"
@@ -179,10 +179,11 @@ export default function SignUpPage() {
                   {...register("firstName", { required: true, maxLength: 15 })}
               />
           </Form.Field>
-          <br></br>
+        
           {errors.firstName && <p style={styleInvalid}>*Please Enter your First Name</p>}
+          <br></br>
           <Form.Field>
-              <Label  style={labelStyle}  name="Last Name" />
+            
               <input
                   placeholder='Last Name'
                   type="text"
@@ -191,10 +192,11 @@ export default function SignUpPage() {
                   {...register("lastName", { required: true, maxLength: 15 })}
               />
           </Form.Field>
-          <br></br>
+        
           {errors.lastName && <p style={styleInvalid}>*Please Enter your Last Name</p>}
+          <br></br>
           <Form.Field>
-          <Label  style={labelStyle}  name="Email" />
+         
               <input
                   placeholder='Email'
                   type="email"
@@ -207,10 +209,10 @@ export default function SignUpPage() {
                       })}
               />
           </Form.Field>
-          <br></br>
+        
           {errors.email && <p style={styleInvalid}>*Please Enter Valid Email</p>}
+          <br></br>
           <Form.Field>
-          <Label   style={labelStyle}  name="Password" />
               <input
                   placeholder='Password'
                   type="password"
@@ -222,7 +224,7 @@ export default function SignUpPage() {
                   })}
               />
           </Form.Field>
-          <br></br>
+        
           {errors.password && <p style={styleInvalid}>*Please check the Password</p>}
           <br></br>
           <Buttonn buttonText="Sign Up" width="250px" style={{
@@ -234,14 +236,143 @@ export default function SignUpPage() {
       </Form>
   </div>
     ]
+
+
+    const htmlWindows =[
+      <Header text={"Sign Up as " + selection} style={styleHeader} />,
+       <br></br>,
+    <div>
+      
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <table >
+        <tr>
+          <td>
+              <Form.Field>
+                  <input
+                      placeholder='First Name'
+                      type="text"
+                      className="inputField"
+                      style={{width: "200px",marginLeft:"1rem"}}
+                      {...register("firstName", { required: true, maxLength: 15 })}
+                  />
+              </Form.Field>
+            
+              {errors.firstName && <p style={styleInvalid}>*Please Enter your First Name</p>}
+          </td>
+
+          <td>
+              <Form.Field>
+                <input
+                    placeholder='Last Name'
+                    type="text"
+                    className="inputField"
+                    style={{width: "200px" ,marginLeft:"1rem"}}
+                    {...register("lastName", { required: true, maxLength: 15 })}
+                />
+             </Form.Field>
+          
+            {errors.lastName && <p style={styleInvalid}>*Please Enter your Last Name</p>}
+          </td>
+        </tr>
+      
+        
+        
+      
+        <tr>
+         <td colSpan="2">
+            <br></br>
+            <Form.Field>
+          
+                <input
+                    placeholder='Email'
+                    type="email"
+                    className="inputField"
+                    style={{width: "450px", marginLeft:"1rem"}}
+                    {...register("email",
+                        {
+                            required: true,
+                            pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                        })}
+                />
+            </Form.Field>
+          
+            {errors.email && <p style={styleInvalid}>*Please Enter Valid Email</p>}
+         </td>        
+        </tr>
+
+        <tr>
+          <td>
+            <br></br>
+              <Form.Field>
+                  <input
+                      placeholder='Password'
+                      type="password"
+                      className="inputField"
+                      style={{width: "200px",marginLeft:"1rem"}}
+                      {...register("password", {
+                          required: true,
+                          pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
+                      })}
+                  />
+              </Form.Field>
+            
+              {errors.password && <p style={styleInvalid}>*Please check the Password</p>}
+          </td>
+
+          <td>
+            <br></br>
+              <Form.Field>
+                  <input
+                      placeholder='Confirm Password'
+                      type="password"
+                      className="inputField"
+                      style={{width: "200px",marginLeft:"1rem"}}
+                      {...register("password", {
+                          required: true,
+                          pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
+                      })}
+                  />
+              </Form.Field>
+            
+              {errors.password && <p style={styleInvalid}>*Please check the Password</p>}
+          </td>
+        </tr>
+       
+       <tr style={{textAlign:"center"}} >
+        <td colSpan="2">
+          <br></br>
+          <Buttonn buttonText="Sign Up" style={{
+          width:"250px", marginLeft:"2" 
+          }} />
+
+        <Header text="Already have account?" style={styleFooter}/>
+          <a  href="#"><Header text="Login" style={styleLogin}/></a>,
+          
+        </td>
+       </tr>
+
+       <tr style={{textAlign:"center"}}>
+        <td colSpan="2"> 
+        <a  href="#" onClick={handleGoogleSignIn} ><GoogleButton  style={styleGoogleSignUp}/></a>
+        </td>
+       </tr>
+        
+
+   </table>
+    </Form>
+</div>
+  ]
+
+
+
     return (
 
-<div className='container-fluid'>
+<div className='container-fluid' >
        <Navbar name1="Contact Us"  name2="About" route1="/contactus" route2="/about"/>
      <div className='row'>
-        <div className='col-xs-12 col-sm-6 col-md-8 col-lg-6 space-container'>
-          <div className='space'></div>
-          <ShadowRect style={ window.innerWidth<480 ? style : styleWindows } html={html} key={1} />
+        <div className='col-xs-12 col-sm-6 col-md-8 col-lg-6 space-container' >
+          <div className='space' ></div>
+          <ShadowRect style={ window.innerWidth<480 ? style : styleWindows } html={window.innerWidth<480 ? html : htmlWindows } key={1} />
      
         </div>
       
