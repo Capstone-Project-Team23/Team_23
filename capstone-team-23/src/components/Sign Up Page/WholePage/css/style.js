@@ -17,6 +17,10 @@ const styleHeader = {
 const labelStyle = {
     marginLeft: "20px"
 }
+
+const labelStyleLogin = {
+    marginLeft: "25px"
+}
 const styleFooter = {
     margin: "auto",
     marginTop: "10px",
@@ -38,6 +42,7 @@ const styleGoogle = {
 const styleInvalid = {
     color: "red",
     fontSize: "12px",
+    marginLeft: "25PX"
 }
 
-export { style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle, styleInvalid }
+export { style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle, styleInvalid, labelStyleLogin }

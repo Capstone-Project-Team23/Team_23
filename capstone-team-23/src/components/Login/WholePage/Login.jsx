@@ -11,7 +11,7 @@ import ellipse from './css/Ellipse 5.svg'
 import './css/WholePage.css'
 import { Form, Button } from 'semantic-ui-react';
 import { useForm } from "react-hook-form";
-import {style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle,styleInvalid} from '../../Sign Up Page/WholePage/css/style'
+import {style, styleHeader, labelStyle, styleFooter, styleLogin, styleWindows, styleGoogle,styleInvalid,labelStyleLogin} from '../../Sign Up Page/WholePage/css/style'
 
 function Login(props) {
   
@@ -49,6 +49,7 @@ function Login(props) {
   const styleGoogle = {
     marginTop:"30px",
     textAlign:"Center",
+    
   
     
   }
@@ -79,12 +80,12 @@ function Login(props) {
     <div>
     <Form onSubmit={handleSubmit(onSubmit)}>
        <Form.Field>
-        <Label  style={labelStyle}  name="Email" />
+        <Label  style={labelStyleLogin}  name="Email" />
             <input
                 placeholder='Email'
                 type="email"
                 className="inputField"
-                style={{width: "250px"}}
+                style={{width: "250px",marginLeft: "20px"}}
                 {...register("email",
                     {
                         required: true,
@@ -93,13 +94,15 @@ function Login(props) {
             />
         </Form.Field>
         {errors.email && <p style={styleInvalid}>*Please Enter Valid Email</p>}
+        <br></br>
+        
         <Form.Field>
-        <Label   style={labelStyle}  name="Password" />
+        <Label   style={labelStyleLogin}  name="Password" />
         <input
                   placeholder='Password'
                   type="password"
                   className="inputField"
-                  style={{width: "250px"}}
+                  style={{width: "250px",marginLeft: "20px"}}
                   {...register("password", {
                       required: true
                   })}
@@ -107,12 +110,13 @@ function Login(props) {
         </Form.Field>
         {errors.password && <p style={styleInvalid}>*Please enter Password</p>}
           <br></br>
-        <br></br>
-        <Buttonn buttonText="Sign Up" width="250px" style={{
-        width:"250px"
-        }} />
-    </Form>
 
+        <Buttonn buttonText="Login" width="250px" style={{
+        width:"250px",marginLeft: "20px"
+        }} />
+        
+    </Form>
+    <br></br>
     <Header text="Don't have an account?" style={styleFooter}/>
     <a  href="#"><Header text="Sign Up" style={styleLogin}/></a>
     <a  href="#"><GoogleButton style={styleGoogle} /></a>
