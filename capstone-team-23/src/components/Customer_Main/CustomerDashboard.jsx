@@ -101,11 +101,11 @@ function CustomerDashboard() {
   };
   return (
     <div className='container-fluid'>CustomerDashboard
-      <Navbar name1="Contact Us" name2="About Us" route1="/contactus" route2="/about" route3="/ProfilePage" profileShow={true} />
+      <Navbar name1="Contact Us" name2="Sign Out" route1="/contactus" route2="/" route3="/ProfilePage" profileShow={true}/>
       <img src={Wave} className="wave" />
       
       <div className="dash-container container">
-        <Button buttonText="Sign Out" style={{ width: "120px" }} onClick={sign_Out} />
+        {/* <Button buttonText="Sign Out" style={{ width: "120px" }} onClick={sign_Out} /> */}
         
         <Link to={'/professionaldashboard'}> <Button buttonText="Professional Dashboard" style={{ width: "220px" }} /></Link>
        

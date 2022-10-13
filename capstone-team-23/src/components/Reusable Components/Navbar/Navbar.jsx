@@ -4,6 +4,10 @@ import Button from '../Buttons/Button'
 import { Link } from 'react-router-dom';
 import faceit from './man.png'
 import { useSelector } from 'react-redux';
+import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from 'react-router-dom'
+import initializeAuthentication from '../../../firebase/firebase-init'
+
 function Navbar(props) {
   const style = {
     padding:"8px",
@@ -20,6 +24,20 @@ function Navbar(props) {
     <Link className="nav-link" to={props.route3}><Button buttonText={props.name3} style={style} /></Link>
   </li>;
   } 
+  const auth = getAuth();
+  const navigate = useNavigate()
+  initializeAuthentication();
+  const sign_Out = () => {
+    const auth = getAuth();
+    signOut(auth).then(() => {
+      console.log('Sign Out Successful')
+      navigate('/')
+    }).catch((error) => {
+      // An error happened.
+
+    });
+  }
+  
 
   return (
     <div className='container-custom' >
@@ -32,12 +50,16 @@ function Navbar(props) {
   <div className="collapse navbar-collapse justify-content-end px-5 " id="navbarNav">
     <ul className="navbar-nav px-5 ">
     {button}
+ 
       <li className="nav-item">
-        <Link className="nav-link" to={props.route1}><Button buttonText={props.name1} style={style} /></Link>
+        <Link className="nav-link" to={props.route1}><Button buttonText={props.name1} style={style}/></Link>
       </li>
+      
       <li className="nav-item">
-        <Link className="nav-link" to={props.route2}><Button buttonText={props.name2}  style={style}/></Link>
+      {props.profileShow ==true? 
+      <Link className="nav-link" to={props.route2}><Button buttonText={props.name2}  style={style} onClick={sign_Out}/></Link> :<Link className="nav-link" to={props.route2}><Button buttonText={props.name2}  style={style}/></Link> }   
       </li>
+
       <li className="nav-item">
         <Link className="nav-link" to={selection=="Customer" ? '/ProfilePage' : "/ProfilePageProfessional"}>{props.profileShow ? <img src={faceit} style={{height:'3rem', width:'3rem'}} alt="" /> : ''}</Link>
       </li>
