@@ -26,6 +26,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import SignUpProfessional from './SignUpProfessional/WholePage/SignUpProfessional.jsx';
 import ProfilePageProfessional from './ProfilePageProfessional/ProfilePageProfessional.jsx';
+import RequestMap from './RequestMap/RequestMap.jsx';
 function App() {
   
   initializeAuthentication();
@@ -67,6 +68,7 @@ function App() {
        <Route path="/postrequest" element = { loginStatus===true ? < PostRequestForm/> : <SignUpPage/> } />
        <Route path="/login" element={<Login/>} />
        <Route exact path="/filterService" element={<FilterService/>} />
+       <Route exact path="/requestMap" element={<RequestMap />} />
        </Routes>
       </div></Router>
 

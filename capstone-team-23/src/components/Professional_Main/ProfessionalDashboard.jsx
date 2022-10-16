@@ -10,6 +10,7 @@ import { doc, onSnapshot, collection, query, where,addDoc, getDocs } from "fireb
 import db from '../../firebase/firestore'
 import CardHeader from 'react-bootstrap/esm/CardHeader';
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function ProfessionalDashboard() {
   ///getting all the requests from the firestore db
@@ -45,6 +46,8 @@ function ProfessionalDashboard() {
       
       <div style={{marginTop:"7rem"}}>
       <Button buttonText="Sign Out" style={{ width: "120px" }} onClick={sign_Out} />
+     <Link to='/requestMap'><Button buttonText='Request Map' style={{ width: "130px" }} /> </Link> 
+
     <Card key="1" Name={"FixItNow"} New={"New"} location={"info.location"}  
     src={img} description={"This is the test"} service={"Plumbing"} Budget={"$3000"} postedAt={"3 Weeks Ago"} />
 
