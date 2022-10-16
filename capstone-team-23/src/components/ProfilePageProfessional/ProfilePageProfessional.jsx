@@ -46,7 +46,7 @@ export default function ProfilePageProfessional() {
     const [address, setAddress] = useState("")
     const [experience, setExperience] = useState("")
     const [services, setServices] = useState([])
-    
+    const [isClicked, setClicked] = useState(false)
     console.log(auth)
 
     //getting all the data from the database all the customer profiles
@@ -83,12 +83,14 @@ export default function ProfilePageProfessional() {
      }else {
       setExperience(docSnap.data().experience)
      }
-    //  if(docSnap.data().services === undefined) {
-    //   setServices("")
-    //  }else {
-    //   setServices(docSnap.data().services)
-    //  } 
+     if(docSnap.data().services === undefined) {
+      setServices("")
+     }else {
+      setServices(docSnap.data().services)
+      console.log(services)
+     } 
 
+     
  
 },  [])
     const style = {
@@ -118,16 +120,28 @@ export default function ProfilePageProfessional() {
   const handleServicesEdit = (e) => {
     setServices(e.target.value)
 }
+  const showCheck = (e) => {
+    return services.includes(e.target.value)
+}
+const handleCheck = (e) => {
+   if(e.target.checked === true) {
+      setServices([...services, e.target.value])
+      console.log(services)
+   }else {
+   const  serviceTemp = services.filter(item => item !== e.target.value)
+    setServices(serviceTemp)
+    console.log(services)
+   }
+}
     const handleSaveClick = (e) => {
 
       //removing duplicates from the services array
-      const a = services
-      const uniqueServices = a.filter(function(item, pos) {
-        return a.indexOf(item) == pos;
-    })
+    //   const uniqueServices = services.filter(function(item, pos) {
+    //     return services.indexOf(item) == pos;
+    // })
 
         const pushObj = {
-            name,email:auth.currentUser.email,mobile,address,experience,uniqueServices
+            name,email:auth.currentUser.email,mobile,address,experience,services
         }
         const uid = auth.currentUser.uid
         const docRef =  setDoc(doc(db, "ProfessionalProfiles", uid ),pushObj, { merge: true });
@@ -243,12 +257,17 @@ export default function ProfilePageProfessional() {
                   {/* <MDBInput id='form1' type='text' value={services} disabled={disabled} onChange={handleServicesEdit}/> */}
                   
                     {/* <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Default checkbox' /> */}
-
-                     {arrOfServices.map(service => (
-                      <MDBCheckbox name='' value={service.Name} id='' label={service.Name} disabled={disabled} onChange={() => (
-                        true ? setServices([...services, service.Name]) : false )
-                      } />
-                       ))}
+                    {
+        
+                        arrOfServices.map(service => {
+                            
+                          return(
+                          <MDBCheckbox name='' value={service.Name} id='' label={service.Name} disabled={disabled} onChange={handleCheck}
+                          checked={services.includes(service.Name)} /> )
+                        })
+                      
+                    }
+                     
                   </MDBCol>
                 </MDBRow>
               </MDBCardBody>
