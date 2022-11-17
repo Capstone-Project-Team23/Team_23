@@ -27,6 +27,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SignUpProfessional from './SignUpProfessional/WholePage/SignUpProfessional.jsx';
 import ProfilePageProfessional from './ProfilePageProfessional/ProfilePageProfessional.jsx';
 import RequestMap from './RequestMap/RequestMap.jsx';
+import ContactProfessional from './ContactProfessional/ContactProfessional.jsx';
 function App() {
   
   initializeAuthentication();
@@ -69,6 +70,7 @@ function App() {
        <Route path="/login" element={<Login/>} />
        <Route exact path="/filterService" element={<FilterService/>} />
        <Route exact path="/requestMap" element={<RequestMap />} />
+       <Route exact path="/contactprofessional" element={<ContactProfessional />} />
        </Routes>
       </div></Router>
 

@@ -39,7 +39,7 @@ useEffect(async function getAllData() {
 
       {
         filteredCards.map(m => (
-          <Card service={m.Name + "-" +m.Service} ImageSrc={"https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"} />
+          <Card forCustDash={false} service={m.Name + "-" +m.Service} ImageSrc={"https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"} />
         ))
       }
       </div>

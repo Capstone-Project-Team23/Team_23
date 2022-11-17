@@ -113,7 +113,7 @@ function CustomerDashboard() {
         <Header text="Make work Easier with FixItNow" style={{ marginTop: "3rem" }} />
         <div className="d-flex flex-row flex-wrap justify-content-center card-container" >
           {arrOfServices.map(serv => (
-            <Card service={serv.Name} ImageSrc={serv.Path} />
+            <Card service={serv.Name} ImageSrc={serv.Path} forCustDash={true} />
           ))}
         </div>
       </div>
