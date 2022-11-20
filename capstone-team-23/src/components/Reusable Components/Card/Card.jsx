@@ -39,7 +39,7 @@ function Card(props){
 <img class="card-img-top" src={props.ImageSrc} alt="Card image cap"/>
 <div class="card-body mx-auto">
   <h5 class="card-title"> <Header text={props.service} style={{fontSize:"1.5rem"}} /> </h5>
-   <Link to={'/contactprofessional'} 
+   <Link to={'/filterService'} 
   onClick={() => dispatch(chooseService(props.service))}><Button buttonText="Contact Professional" style={{padding:".5rem", marginLeft:"-1rem"}}/></Link> 
 
 </div>

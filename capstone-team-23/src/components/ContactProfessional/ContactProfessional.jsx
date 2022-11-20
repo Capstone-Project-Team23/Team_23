@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../Reusable Components/Buttons/Button'
 import Header from '../Reusable Components/Header/Header'
 
-const ContactProfessional = () => {
+const ContactProfessional = ({name,profMail}) => {
   const [formStatus, setFormStatus] = React.useState('Send')
   const onSubmit = (e) => {
     e.preventDefault()
@@ -16,9 +16,11 @@ const ContactProfessional = () => {
     console.log(conFom)
   }
   return (
-    <div className="container mt-5">
-        
-      <h2 className="mb-3"><Header text={"Contact Professional"} style={{fontSize:"2.5rem"}} /></h2>
+    <div className="container">
+        <br />
+        <br />
+        <br />
+      <h2 className="mb-3"><Header text={"Contact " + name} style={{fontSize:"2.5rem", marginTop:"3rem"}} /></h2>
       <form onSubmit={onSubmit}>
         <div className="mb-3">
           <label className="form-label" htmlFor="name">
@@ -28,9 +30,15 @@ const ContactProfessional = () => {
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="email">
-            Email
+            From:
           </label>
           <input className="form-control" type="email" id="email" required />
+        </div>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="email">
+            To:
+          </label>
+          <input className="form-control" type="email" id="email" required value={profMail} disabled/>
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="message">
