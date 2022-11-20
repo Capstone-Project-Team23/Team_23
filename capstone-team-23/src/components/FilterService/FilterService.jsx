@@ -11,6 +11,9 @@ import { Link } from 'react-router-dom';
 import Button from '../Reusable Components/Buttons/Button';
 import { useDispatch } from "react-redux";
 import {chooseService} from '../../redux/actions/ChooseServiceAction'
+import like from './like.png'
+import dislike from './unlike.png'
+import './filter.css'
 //import {} from 'firebase/auth'
 
 function FilterService() {
@@ -61,13 +64,25 @@ useEffect(async function getAllData() {
           <div class="card card-con" style={{width: "18rem" , margin:'1rem'}  }>
         <img class="card-img-top" src={"https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"}  alt="Card image cap"/>
         <div class="card-body mx-auto">
-          <h5 class="card-title"> <Header text={m.Name + "-" +m.Service} style={{fontSize:"1.5rem"}} /> </h5>
+          <h5 class="card-title"> <Header text={m.Name + "-" +m.Service} style={{fontSize:"1.3rem"}} />
+          <div className="like-container">
+            <div className="like"><img src={like} alt="" />
+            <br />
+            <Header text={"2355"}style={{fontSize:"1.2rem", color:"#28a745" }} />
+            </div>
+            <div className="dislike"> <img src={like} alt="" style={{transform:"rotate(180deg)",}} />
+            <br />
+            <Header text={"55"}style={{fontSize:"1.2rem",color:"#dc3545"}} /></div>
+           
+          </div>
+
+           </h5>
           <Link to={'/filterService'} 
           onClick={() => dispatch(chooseService(m.Service))}><Button onClick={() =>{
            setContactBtn(true)
            setContactName(m.Name + " for " + m.Service)
            setContactEmail(m.Name+"@fixitnowmailservice.com")
-          }} buttonText="Contact Professional" style={{padding:".5rem", marginLeft:"-1rem"}}/></Link>
+          }} buttonText="Contact Professional" style={{padding:".5rem", marginLeft:"-0.5rem"}}/></Link>
         </div>
       </div> 
       </>
